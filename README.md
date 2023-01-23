@@ -1,6 +1,7 @@
 # To run
 1. Open terminal
-2. Cd client
+2. NPM INSTALL
+2. Cd client (if not in client)
 3. NPM START
 
 
