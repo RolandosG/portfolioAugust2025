@@ -48,7 +48,7 @@ const About = () => {
         </div>
       </div>
       <div class="slideRight" style={{marginTop:"400px", marginRight: "0px", textAlign: "left", color: 'white'}}>
-        Hello! I'm a student in software & web developement from Athens, Greece and currently based in Freezing beautiful Toronto. Practicing on designing and developing state-of-the-art websites to deliver top user experiences. I have finished 3 years in programming and analysis and are now persuing my Honour bachelors of technology part time.   
+        Hello! I'm a student in software & web developement from Athens, Greece and currently based in Freezing beautiful Toronto. Practicing on designing and developing state-of-the-art websites to deliver top user experiences. I have finished my 3 year program in programming and analysis and are now persuing my Honour bachelors of technology part time.   
         <br /><br></br>
         
       </div>
