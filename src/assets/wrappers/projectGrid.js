@@ -51,7 +51,14 @@ body {
   
   
 }
-
+.card__content_title {
+  text-align: center;
+  position: relative;
+  padding: 5em 5em;
+  
+  
+  
+}
 .card:hover .card__content {
   transform: rotateY(.5turn);
  

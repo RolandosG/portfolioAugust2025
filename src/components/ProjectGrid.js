@@ -20,10 +20,10 @@ const ProjectGrid = () => {
         <div class='box'>
       <div class="grid-item">
     <div class="card">
-    <div class="card__content">
+    <div class="card__content_title">
         <div class="card__front" style={{background: 'transparent'}}>
           <h3 class="card__title" style={{ color: 'white'}}>PROJECTS</h3>
-            <p class="card__subtitle" style={{color : 'white'}}>SOME OF MY</p>
+            <p class="card__subtitle" style={{color : 'white'}}>MY</p>
         </div> 
             
     </div>
