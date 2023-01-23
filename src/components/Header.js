@@ -46,7 +46,7 @@ const Header = () => {
                   > </a>*/}
                   <a
                     href="https://www.linkedin.com/in/rolandos-georgoulis-0ab003258/"
-                    class="fa fa-linkedin"
+                    class="fa fa-linkedin"  target="_blank" rel="noopener noreferrer"
                     style={{ marginTop: "-12px" }}
                   > </a>
                   {/*<a
