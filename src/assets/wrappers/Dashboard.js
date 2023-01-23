@@ -442,7 +442,7 @@ section:nth-child(3n) {
   border-radius: 10%;
   background-color: deepskyblue;
   width: 190px;
-  height: 125px;
+  height: 123px;
   position: static;
   opacity: 0;
   animation: scaleIn 4s infinite cubic-bezier(.36, .11, .39, .32);
