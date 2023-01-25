@@ -18,7 +18,7 @@ const AboutPage = () => {
                 marginTop: "-200px",
                 fontSize: "4.2rem",
                 textDecoration: "underline",
-                color: '#00d4ff'
+                color: '#003d49'
               }}
             >
               About me
@@ -31,7 +31,7 @@ const AboutPage = () => {
                 fontSize: "19px",
               }}
             >
-            <Skills style={{padding: '0px', height: '0px', marginTop: '-30px'}}><div class="name-avatar" style={{ marginTop: '0px', right: '850px', bottom: '450px', color: '#00d4ff'}}> 
+            <Skills style={{padding: '0px', height: '0px', marginTop: '-30px'}}><div class="name-avatar" style={{ marginTop: '0px', right: '850px', bottom: '450px', color: '#003d49'}}> 
             Hi, my names Rolandos!</div>
             </Skills>
             </h1>
@@ -45,7 +45,7 @@ const AboutPage = () => {
               paddingRight: "250px",
               marginTop: "0px",
               textDecoration: "underline",
-              color: '#00d4ff'
+              color: '#003d49'
             }}
           >
             Coming from a background in design, art, & technology, I love

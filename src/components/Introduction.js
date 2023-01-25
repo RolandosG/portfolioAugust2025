@@ -9,14 +9,14 @@ const Introduction = () => {
       <div class="slideUp">
         <div
           clas="introduction"
-          style={{ color: "#00d4ff", marginTop: "750px" }}
+          style={{ color: "#003d49", marginTop: "750px" }}
         >
           <h1 style={{ marginTop:"-250px",marginRight: "550px", fontSize: "4.2rem", textShadow: '2px 2px #056dbb', boxSizing: 'border-box'}}>
             Software developer &<br></br> programming analyst
           </h1>
         </div>
       </div>
-      <div class="slideRight" style={{color: '#00d4ff'}}>
+      <div class="slideRight" style={{color: '#003d49'}}>
         Based in Toronto, Canada.
         <br />
         Student in designing and developing state-of-the-art websites.

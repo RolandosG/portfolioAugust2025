@@ -6,20 +6,26 @@ const Wrapper = styled.section`
   margin-top: 250px;
   margin-left: 250px;
 }
+.links {
+  top: 45px;
+  position: fixed;
+  width: 1250px;
+  //height: 400px;
+}
 .title {
   position: static;
   margin-left: 0px !important;
   margin-top: 0px !important;
   display: inline;
   font-size: 24px;
-  color: white;
+  color: black;
   text-decoration: underline;
   
 }
 .desc {
-  
+  top: 42px;
   margin-left: -.5px !important;
-  margin-top: 0px !important;
+  
   
   
   
@@ -41,12 +47,15 @@ const Wrapper = styled.section`
       transform: translatey(0px);
       animation: float 6s ease-in-out 2s;
       img { width: 100%; height: auto; }
-  }
+      position: relative;
+
+      padding-top: 10px;
 }
 .slideRight {
   top:100px;
   //left:10px;
   animation: slideRight ease 2.4s forwards 2.2s;
+  padding-top: 10px;
 }
 @keyframes slideRight {
   0% {transform: translateX(0);}
@@ -62,14 +71,16 @@ ul {
 
 li {
   margin-right: 0.7rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 10px;
   background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)';
   backgroundSize: '240% 240%';
   animation: 'section-animation 24s ease infinite';
-  padding: 0.2rem 1rem;
+  //padding: 0.2rem 1rem;
+  padding-bottom: 10px;
   //border-radius: 0.3rem;
   color: white;
   width: 100%;
+  
 }
 
 @keyframes fadeIn {
@@ -94,7 +105,7 @@ li {
 
 
 body {
-  background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)';
+  background: 'linear-gradient(88deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)';
   backgroundSize: '240% 240%';
   animation: 'section-animation 24s ease infinite';
   
@@ -126,6 +137,8 @@ body {
 .zoom:hover {
   transform: scale(1.05); 
 }
+
+
 `
 
 export default Wrapper

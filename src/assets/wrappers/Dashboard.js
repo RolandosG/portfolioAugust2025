@@ -370,7 +370,7 @@ section {
 
   //background: rgb(168,148,61);
   //background: linear-gradient(180deg, rgba(168,148,61,1) 0%, rgba(11,38,71,1) 100%);
-  background: linear-gradient(88deg,#020024,#090979,#056dbb);
+  background: linear-gradient(88deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0);
   background-size: 240% 240%;
   animation: section-animation 24s ease infinite;
   
