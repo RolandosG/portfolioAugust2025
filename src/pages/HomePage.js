@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Introduction from '../components/Introduction';
 import Cards from '../components/Cards';
 import Wrapper from '../assets/wrappers/Dashboard';
-import AboutPage from '../components/AboutPage';
+import AboutSection from '../components/AboutSection';
 import ProjectGrid from '../components/ProjectGrid.js';
 const HomePage = () => {
   
@@ -23,7 +23,7 @@ const HomePage = () => {
         <Introduction/>
         </section>
         <section>
-        <AboutPage style={{marginLeft: "50%"}}/>
+        <AboutSection style={{marginLeft: "50%"}}/>
         <Cards style={{marginLeft: "50%"}}/>
         </section>
         <section>
