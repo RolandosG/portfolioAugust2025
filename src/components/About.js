@@ -47,10 +47,11 @@ animation: 'section-animation 10s ease infinite'}}></div>
     </div>
   </div>
   <div class="slideRight" style={{marginTop:"400px", marginRight: "0px", textAlign: "left", color: '#003d49'}}>
-    Hello! I'm a student in software & web developement from Athens, Greece and currently based in Freezing beautiful 
-    Toronto. Practicing on designing and developing state-of-the-art websites to deliver top user experiences. 
-    I have finished my 3 year program in programming and analysis and are now persuing my
-     Honour bachelors of technology part time.   
+    A website that delivers exceptional user experiences is what drives my passion for software and web development. With roots in Athens, Greece, and currently situated in Toronto, Canada – a hub for innovation – as a burgeoning student in this field, I take pride in presenting my portfolio website. Having completed an extensive three-year program in programming and analysis, I am now engaged in part-time studies towards an Honours Bachelor of Technology which keeps me updated with the latest industry trends. Result-driven and committed to excellence, I aspire to exceed expectations as an up-and-coming specialist in the field. 
+
+My collaborative mindset and ability to devise practical solutions make me a valuable asset to any team. As an accomplished expert proficient in JavaScript, ReactJS, NodeJS, and RESTful APIs, as well as adept with Microsoft Office, Excel, Adobe Photoshop, and Illustrator skills, I possess the critical knowledge required for any web development position. My enthusiasm toward pursuing an internship or junior full-stack developer role will enable me to challenge myself further while continuing professional growth. 
+
+As I give a warm welcome to you, I express my gratitude for your visit to my portfolio website.   
     <br /><br></br>
     
   </div>
