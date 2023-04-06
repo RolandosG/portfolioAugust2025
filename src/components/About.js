@@ -46,7 +46,7 @@ animation: 'section-animation 10s ease infinite'}}></div>
       </h1>
     </div>
   </div>
-  <div class="slideRight" style={{marginTop:"400px", marginRight: "0px", textAlign: "left", color: '#003d49'}}>
+  <div class="slideRight" style={{marginTop:"600px", marginRight: "0px", textAlign: "left", color: '#003d49'}}>
     "I'm a student in software and web development from Athens, Greece, now based in Toronto. I design and develop exceptional websites with a passion for delivering top user experiences. I've completed a three-year program in programming and analysis and am now studying for an Honours Bachelor of Technology part-time. As an expert in JavaScript, ReactJS, NodeJS, and RESTful APIs, I'm committed to delivering results and exceeding expectations. I'm looking for an internship or junior full-stack developer role to challenge myself further and continue my professional growth. Thank you for visiting my portfolio website."   
     <br /><br></br>
     
