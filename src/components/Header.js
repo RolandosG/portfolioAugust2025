@@ -29,7 +29,7 @@ const Header = () => {
                     {" "}
                     Home
                   </Nav.Link>
-                  <Nav.Link href="/About">About</Nav.Link>
+                  {/*<Nav.Link href="/About">About</Nav.Link>*/}
                   <Nav.Link href="/Portfolio" style={{ marginRight: "60px" }}>
                     Portfolio
                   </Nav.Link>

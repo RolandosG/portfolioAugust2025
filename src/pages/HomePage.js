@@ -23,11 +23,11 @@ const HomePage = () => {
         <Introduction/>
         </section>
         <section>
-        <AboutSection style={{marginLeft: "50%"}}/>
-        <Cards style={{marginLeft: "50%"}}/>
+        <ProjectGrid/>
         </section>
         <section>
-          <ProjectGrid/>
+        <AboutSection style={{marginLeft: "50%"}}/>
+        <Cards style={{marginLeft: "50%"}}/> 
         </section>   
         
         </main>

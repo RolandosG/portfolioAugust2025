@@ -35,7 +35,7 @@ const ProjectGrid = () => {
       <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">BlackJack website</h3>
@@ -56,7 +56,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Shopping Store backend</h3>
@@ -76,7 +76,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Robotic in C</h3>
@@ -96,7 +96,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Adventure game</h3>
@@ -118,7 +118,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#cee7a2,#1b3af5,#9dc85f,#a82e72)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Portfolio website</h3>

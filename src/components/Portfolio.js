@@ -44,7 +44,7 @@ const Portfolio = () => {
           </li>
           
           
-          <li>
+          {/*<li>
             <div class='zoom'> <div className="slideRight slides" style={{animation: "slideRight ease 3.4s forwards 3.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
             <div className='title'>Shopping store <FaReact  size={'50px'}/></div>
             <div className='desc'>A RESTful Apps back end that displays items from mongoDB. </div>
@@ -52,7 +52,7 @@ const Portfolio = () => {
             </div>
             </div>
             </div>
-          </li>
+  </li>*/}
            
 
            
