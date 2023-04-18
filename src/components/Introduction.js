@@ -17,9 +17,8 @@ const Introduction = () => {
         </div>
       </div>
       <div class="slideRight" style={{color: '#003d49'}}>
-        Based in Toronto, Canada.
-        <br />
-        Student in designing and developing state-of-the-art websites.
+        Welcome to my portfolio!   <br />
+        As a dedicated software and web development student based in Toronto, Canada, I have a keen eye for design and a passion for building exceptional websites. Please take a look at my work and discover how I can contribute to your team.
       </div>
       <div
         class="slideUp"
