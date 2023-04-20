@@ -5,6 +5,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Wrapper from "../assets/wrappers/Dashboard";
 
+import "react-awesome-button/dist/styles.css";
+import { AwesomeButton } from "react-awesome-button";
+
 const Header = () => {
   return (
     <Wrapper>
@@ -33,7 +36,17 @@ const Header = () => {
                   <Nav.Link href="/Portfolio" style={{ marginRight: "60px" }}>
                     Portfolio
                   </Nav.Link>
-
+                  <AwesomeButton
+          type="secondary"
+          style={{
+            color: '039cda',
+            width: "100px",
+            height: "70px",
+            marginLeft: "-54px",
+            marginTop: "-20px",
+          }}
+        ><a href="https://docs.google.com/document/d/1YDkw0mK-TM5QpMdBXl3OnuvqTlFUC4ky/edit?usp=sharing&ouid=104420958901390331204&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">RESUME</a>
+        </AwesomeButton>
                   {/*<a
                     href="http://facebook.com"
                     class="fa fa-facebook"

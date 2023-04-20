@@ -53,7 +53,7 @@ const ProjectGrid = () => {
    </div>
    </div>
     
-   <div class="grid-item">
+   {/*<div class="grid-item">
     <div class="card">
     <div class="card__content">
         <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
@@ -71,7 +71,7 @@ const ProjectGrid = () => {
           </div>
     </div>
     </div>
-   </div>
+  </div>*/}
 
    <div class="grid-item">
     <div class="card">
@@ -89,6 +89,18 @@ const ProjectGrid = () => {
             <br></br><SiGithub  size={'20px'}/>&ensp;<a href="https://github.com/RolandosG/exploration-machine" target="_blank" rel="noopener noreferrer">LEARN MORE</a>
             <br></br><SiYoutube size={'20px'}/>&ensp;<a href="https://youtu.be/a51OEI5wD8A" target="_blank" rel="noopener noreferrer">Simulation</a></p></p>
           </div>
+    </div>
+    </div>
+   </div>
+
+   <div class="grid-item">
+    <div class="card">
+    <div class="card__content_title">
+        <div class="card__front" style={{background: 'transparent'}}>
+          <h3 class="card__title" style={{ color: '#003d49'}}></h3>
+            <p class="card__subtitle" style={{color : '#003d49'}}></p>
+        </div> 
+            
     </div>
     </div>
    </div>

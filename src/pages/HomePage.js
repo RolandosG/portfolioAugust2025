@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import Introduction from '../components/Introduction';
+//import Introduction from '../components/Introduction';
 import Cards from '../components/Cards';
 import Wrapper from '../assets/wrappers/Dashboard';
 import AboutSection from '../components/AboutSection';
@@ -19,9 +19,9 @@ const HomePage = () => {
         
         <main class="scroll-container">
         
-          <section>
+        { /*  <section>
         <Introduction/>
-        </section>
+          </section> */}
         <section>
         <ProjectGrid/>
         </section>
