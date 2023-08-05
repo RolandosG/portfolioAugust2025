@@ -95,15 +95,26 @@ const ProjectGrid = () => {
 
    <div class="grid-item">
     <div class="card">
-    <div class="card__content_title">
-        <div class="card__front" style={{background: 'transparent'}}>
-          <h3 class="card__title" style={{ color: '#003d49'}}></h3>
-            <p class="card__subtitle" style={{color : '#003d49'}}></p>
+    <div class="card__content">
+        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
+  backgroundSize: '240% 240%',
+  animation: 'section-animation 24s ease infinite'}}>
+          <h3 class="card__title">Space Odessy</h3>
+            <p class="card__subtitle">Made with Unity</p>
         </div> 
-            
+            <div class="card__back" style={{background: 'radial-gradient(circle,#cee7a2,#a82e72)',
+  backgroundSize: '240% 240%',
+  animation: 'section-animation 10s ease infinite'}}><p 
+            class="card__body">My first complex project made with Unity<p>
+             <br></br><SiGithub  size={'20px'}/>&ensp;<a href="Rolandosg.com/RecentProject" target="_blank" rel="noopener noreferrer">LEARN MORE</a>
+              <br></br><MdWebAsset size={'25px'}/>&ensp;<a href="https://github.com/RolandosG/Shape_Shooter_Game" target="_blank" rel="noopener noreferrer">Play here</a>
+            </p>
+            </p>
+          </div>
     </div>
     </div>
    </div>
+
 
    <div class="grid-item">
     <div class="card">
