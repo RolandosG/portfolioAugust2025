@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import {HomePage, Portfolio, Error} from './pages';
+import {HomePage, Portfolio, RecentProject, Error} from './pages';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <Route path='/' element={<HomePage/>}/>
        {/*<Route path='/About' element={<About/>}/>*/}
         <Route path='/Portfolio' element={<Portfolio/>}/>
+        <Route path='/RecentProject' element={<RecentProject/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>      
       

@@ -33,8 +33,11 @@ const Header = () => {
                     Home
                   </Nav.Link>
                   {/*<Nav.Link href="/About">About</Nav.Link>*/}
-                  <Nav.Link href="/Portfolio" style={{ marginRight: "60px" }}>
+                  <Nav.Link href="/Portfolio" style={{ marginRight: "0px" }}>
                     Portfolio
+                  </Nav.Link>
+                  <Nav.Link href="/RecentProject" style={{ marginRight: "93px" }}>
+                    NEW
                   </Nav.Link>
                   <AwesomeButton
           type="secondary"

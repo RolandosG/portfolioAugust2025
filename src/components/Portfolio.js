@@ -10,7 +10,7 @@ import { MdWebAsset } from "react-icons/md";
 import { FaReact } from 'react-icons/fa'
 import { GiVintageRobot } from 'react-icons/gi';
 import { SiCplusplus } from 'react-icons/si';
-
+import { FaUnity } from 'react-icons/fa';
 const Portfolio = () => {
   
   return (
@@ -32,7 +32,15 @@ const Portfolio = () => {
           <ul style={{width: '1200px', height: '1200px'}}>  
           <div class='container'>
 
-            
+          <li> 
+            <div class='zoom'><div className ="slideRight slides" style={{animation: "slideRight ease 1.4s forwards 1.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
+            <div class="title">3D unity game <FaUnity  size={'50px'}/></div>
+            <div className='desc'>A complex intricate project with over 1000 lines of code</div>
+            <div className='links'><SiGithub  size={'25px'}/> &ensp;<a href="https://github.com/RolandosG/space_shooter" target="_blank" rel="noopener noreferrer">Github</a>&ensp;<MdWebAsset size={'25px'}/>&ensp;<a href="http://rolandosg.com/RecentProject" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+            </div>
+            </div>
+          </li>
           <li> 
             <div class='zoom'><div className ="slideRight slides" style={{animation: "slideRight ease 2.4s forwards 2.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
             <div class="title">BlackJack Website <FaReact  size={'50px'}/></div>

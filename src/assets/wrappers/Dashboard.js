@@ -484,7 +484,186 @@ section:nth-child(3n) {
     //transform: translatey(0px);
   }
 }
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* or whatever height you want */
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; 
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; /* or any other color for the text */
+}
+
+.background-gif {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Styles for the Project Overview Section */
+
+#project-overview {
+    padding: 40px 0; /* Adds space above and below the section */
+    background-color: #333; /* Dark background for contrast */
+    color: #000; /* White text color */
+}
+
+#project-overview h2 {
+    font-size: 2.5em; /* Increase the font size for the section title */
+    text-align: center; /* Center the title */
+    margin-bottom: 30px; /* Space below the title */
+}
+
+#project-overview .description,
+#project-overview .technologies {
+    margin-bottom: 30px; /* Adds space between description and technologies sections */
+}
+
+#project-overview h3 {
+    font-size: 2em; /* Increase the font size for the subsection titles */
+    border-bottom: 2px solid #555; /* Underline for subsection titles */
+    margin-bottom: 15px; /* Space below the subsection titles */
+}
+
+#project-overview p {
+    font-size: 1.2em; /* Increase the font size for the content */
+    line-height: 1.5; /* Spacing between lines for readability */
+    margin: 0 0 15px 0; /* Spacing below each paragraph */
+}
+/* Base styling for the game highlights section */
+#game-highlights {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#game-highlights h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.highlight-section {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.highlight-section h3 {
+    flex: 1 1 100%;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.highlight-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px; /* Adjust this based on desired button width */
+  margin-right: 30px; /* Space between the buttons and the content */
+}
+
+.highlight-tabs button {
+  padding: 10px;
+  width: 100%; /* buttons take the full width of the container */
+  text-align: center;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.highlight-tabs button:hover {
+  background-color: #555;
+}
 
 
+.highlight-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.highlight-content img {
+  width: 70%; /* adjust as needed */
+  margin-bottom: 15px;
+}
+
+.highlight-content pre {
+  max-width: 70%; /* adjust as needed */
+  overflow-x: auto; /* in case the code is too wide */
+}
+
+.highlight-content code {
+    color: #f2a365; /* A soft orange tone for the code */
+}
+
+/* Responsive considerations */
+@media (max-width: 768px) { /* Adjust for tablets and smaller */
+    .highlight-content {
+        flex-direction: column;
+    }
+
+    .highlight-content img, .highlight-content pre {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.upgrade-system-gif {
+  width: 96%; /* or set a fixed width like 300px if needed */
+  max-width: 500px; /* ensure it doesn't become too big on larger screens */
+  height: auto; /* maintain aspect ratio */
+  display: block; /* to center the image if needed */
+  margin: 0 auto; /* to center the image if needed */
+}
+.Main-Boss {
+  width: 100%; /* or set a fixed width like 300px if needed */
+  max-width: 500px; /* ensure it doesn't become too big on larger screens */
+  height: auto; /* maintain aspect ratio */
+  display: block; /* to center the image if needed */
+  margin: 0 auto; /* to center the image if needed */ 
+}
+.Event-gif {
+  width: 90%; /* or set a fixed width like 300px if needed */
+  max-width: 200px; /* ensure it doesn't become too big on larger screens */
+  height: auto; /* maintain aspect ratio */
+  display: block; /* to center the image if needed */
+  margin: 0 auto; /* to center the image if needed */ 
+}
 `
 export default Wrapper
