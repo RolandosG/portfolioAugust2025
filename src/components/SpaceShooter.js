@@ -28,7 +28,11 @@ function EngagingHeader() {
         <div className="overlay-content">
             <h1>Welcome to Space Shooter</h1>
             <p>A thrilling game of interstellar challenges and rewards.</p>
-            <button className="download-button"><a href="https://github.com/RolandosG/Shape_Shooter_Game" target="_blank" rel="noopener noreferrer">Download Now</a></button>
+           
+            <button className="download-button"><a href="https://mega.nz/file/IlRQDDZC#En6A-TSbq-DhhKdxOSyhSoALsFwxM2s8QK1803D-jHk" target="_blank" rel="noopener noreferrer">Download Game!</a></button>
+            <br></br>
+            <button className="download-button"><a href="https://github.com/RolandosG/Shape_Shooter_Game" target="_blank" rel="noopener noreferrer">View Github Repo!</a></button>
+           
         </div>
     );
 
