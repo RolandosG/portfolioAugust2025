@@ -5,6 +5,8 @@ import Cards from '../components/Cards';
 import Wrapper from '../assets/wrappers/Dashboard';
 import AboutSection from '../components/AboutSection';
 import ProjectGrid from '../components/ProjectGrid.js';
+import Highlights from '../components/Highlights';
+
 const HomePage = () => {
   
   return (
@@ -22,13 +24,18 @@ const HomePage = () => {
         { /*  <section>
         <Introduction/>
           </section> */}
-        <section>
-        <ProjectGrid/>
+        <section class="section-container">  
+        <div class="about-section">
+        <AboutSection/>
+        </div>
+        <Highlights/>
         </section>
         <section>
-        <AboutSection style={{marginLeft: "50%"}}/>
-        <Cards style={{marginLeft: "50%"}}/> 
+        <ProjectGrid/>
         </section>   
+        <section>
+        <Cards style={{marginLeft: "50%"}}/> 
+        </section>
         
         </main>
       </body>

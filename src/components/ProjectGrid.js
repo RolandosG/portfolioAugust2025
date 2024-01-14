@@ -23,7 +23,7 @@ const ProjectGrid = () => {
     <div class="card__content_title">
         <div class="card__front" style={{background: 'transparent'}}>
           <h3 class="card__title" style={{ color: '#003d49'}}>PROJECTS</h3>
-            <p class="card__subtitle" style={{color : '#003d49'}}>MY</p>
+            <p class="card__subtitle" style={{color : '#003d49'}}>OTHER</p>
         </div> 
             
     </div>
@@ -35,7 +35,7 @@ const ProjectGrid = () => {
       <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg, #005792, #0575E6)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">BlackJack website</h3>
@@ -76,7 +76,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg, #005792, #0575E6)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Robotic in C</h3>
@@ -96,7 +96,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg, #005792, #0575E6)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Space Odessy</h3>
@@ -106,8 +106,8 @@ const ProjectGrid = () => {
   backgroundSize: '240% 240%',
   animation: 'section-animation 10s ease infinite'}}><p 
             class="card__body">My first complex project made with Unity<p>
-             <br></br><SiGithub  size={'20px'}/>&ensp;<a href="Rolandosg.com/RecentProject" target="_blank" rel="noopener noreferrer">LEARN MORE</a>
-              <br></br><MdWebAsset size={'25px'}/>&ensp;<a href="https://github.com/RolandosG/Shape_Shooter_Game" target="_blank" rel="noopener noreferrer">Play here</a>
+             <br></br><SiGithub  size={'20px'}/>&ensp;<a href="https://Rolandosg.com/RecentProject" target="_blank" rel="noopener noreferrer">LEARN MORE</a>
+              <br></br><MdWebAsset size={'25px'}/>&ensp;<a href="https://mega.nz/file/IlRQDDZC#En6A-TSbq-DhhKdxOSyhSoALsFwxM2s8QK1803D-jHk" target="_blank" rel="noopener noreferrer">Play here</a>
             </p>
             </p>
           </div>
@@ -119,7 +119,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg, #005792, #0575E6)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Adventure game</h3>
@@ -141,7 +141,7 @@ const ProjectGrid = () => {
    <div class="grid-item">
     <div class="card">
     <div class="card__content">
-        <div class="card__front" style={{background: 'linear-gradient(88deg,#00d4ff,#1b3af5,#00d4ff,#00d4ff)',
+        <div class="card__front" style={{background: 'linear-gradient(88deg, #005792, #0575E6)',
   backgroundSize: '240% 240%',
   animation: 'section-animation 24s ease infinite'}}>
           <h3 class="card__title">Portfolio website</h3>

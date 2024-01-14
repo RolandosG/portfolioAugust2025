@@ -12,9 +12,9 @@ import Error from "../src/pages/Error";
 import About from "../src/pages/About";
 import Portfolio from "../src/pages/Portfolio";
 import RecentProject from "../src/pages/RecentProject";
-
+import MindWave from "../src/pages/MindWave";
 export{
-    HomePage, About, Portfolio, RecentProject, Error
+    HomePage, About, Portfolio, RecentProject, MindWave, Error
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

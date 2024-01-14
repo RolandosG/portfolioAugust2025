@@ -1,133 +1,179 @@
 import React from 'react';
 import Header from '../components/Header';
-import Wrapper from '../assets/wrappers/Dashboard';
-import Grid from '../assets/wrappers/Portfolio';
+import { GridWrapper } from '../assets/wrappers/Portfolio.js';
 
-import {SiGithub} from 'react-icons/si'
-import { SiYoutube } from "react-icons/si";
-import { MdWebAsset } from "react-icons/md";
-
-import { FaReact } from 'react-icons/fa'
+import { FaReact, FaUnity } from 'react-icons/fa';
+import { SiGithub } from 'react-icons/si';
+import { MdWebAsset } from 'react-icons/md';
 import { GiVintageRobot } from 'react-icons/gi';
 import { SiCplusplus } from 'react-icons/si';
-import { FaUnity } from 'react-icons/fa';
+import { SiYoutube } from 'react-icons/si';
+
+import unityPic from '../assets/images/gamepic3.PNG';
+import blackjackPic from '../assets/images/blackjack.png';
+import robotCPic from '../assets/images/robotC.png';
+import unrealPic from '../assets/images/unreal.png';
+import websitePic from '../assets/images/websitePic.png';
+import mwPic from '../assets/images/MindWave.png';
+
+import { SiReact, SiTypescript, SiExpress, SiMongodb, SiAwsamplify, SiLeaflet, SiSass, SiJest } from 'react-icons/si';
+import {FaNodeJs} from 'react-icons/fa';
+import WS from '../assets/images/websocketSkill.svg';
+import { useEffect } from 'react';
+
+const techIcons = {
+  React: <SiReact size={30} title="React" />,
+  TypeScript: <SiTypescript size={30} title="TypeScript" />,
+  MongoDB: <SiMongodb size={30} title="MongoDB" />,
+  AWSAmplify: <SiAwsamplify size={30} title="AWS Amplify" />,
+  Leaflet: <SiLeaflet size={30} title="Leaflet" />,
+  Sass: <SiSass size={30} title="Sass" />,
+  NodeJs: <FaNodeJs size={30} title="Node.js" />,
+  WebSocket: <img src={WS} style={{ width: '30px' }} alt="WebSocket" title="WebSocket" />
+};
+
+const recentWorkData = [
+  {
+    title: 'MindWave Social Media Platform',
+    description: 'MindWave redefines global connection through a unique social media platform. Featuring real-time mapping & a dynamic and interactive global sentiment landscape.',
+    imageUrl: mwPic, // Replace with the path to your image
+    keyFeatures: [
+      'Interactive user experience',
+      'Advanced trend analysis tools',
+      'WebSocket for live updates',
+      'Responsive and interactive map visuals'
+    ],
+    techStack: ['React', 'TypeScript', 'Express', 'MongoDB', 'AWS Amplify', 'Leaflet', 'Sass', 'Jest', 'Node.js', 'WebSocket'],
+    projectLink: 'https://mindwave.com/', // Replace with your project link
+    githubLink: 'https://github.com/RolandosG/SM_MindWave' // Replace with your GitHub link
+  },
+  // Add more entries as needed
+];
+
+const projectData = [
+  {
+    title: '3D Unity Game',
+    icon: <FaUnity size={'50px'} />,
+    description: 'A complex intricate project with over 1000 lines of code.',
+    githubLink: 'https://github.com/RolandosG/space_shooter',
+    websiteLink: 'http://rolandosg.com/RecentProject',
+    imageUrl: unityPic,
+  },
+  {
+    title: 'Portfolio Website',
+    icon: <FaReact size={'50px'} />,
+    description: 'The website I\'ve designed here.',
+    githubLink: 'https://github.com/RolandosG/portfolioSite',
+    websiteLink: 'rolandosg.com',
+    imageUrl: websitePic,
+  },
+  {
+    title: 'BlackJack Website',
+    icon: <FaReact size={'50px'} />,
+    description: 'A group project built with React to showcase abilities of full stack development.',
+    githubLink: 'https://github.com/RolandosG/PRJ666-BlackJack-main',
+    websiteLink: 'https://blackjack.herokuapp.com/landing',
+    imageUrl: blackjackPic,
+  },
+  {
+    title: 'Robotics in C',
+    icon: <GiVintageRobot size={'50px'} />,
+    description: 'Real time robot simulation using sensors to locate & move objects.',
+    githubLink: 'https://github.com/RolandosG/exploration-machine',
+    youtubeLink: 'https://youtu.be/a51OEI5wD8A',
+    imageUrl: robotCPic,
+  },
+  {
+    title: 'Adventure Game',
+    icon: <SiCplusplus size={'40px'} />,
+    description: 'An RPG adventure game made from scratch using Unreal\'s blueprints.',
+    githubLink: 'https://github.com/RolandosG/Rolos-Grand-Adventure',
+    youtubeLink: 'https://youtu.be/GpPjLehmRSk',
+    imageUrl: unrealPic,
+  },
+  
+  // Add more projects as needed
+];
 const Portfolio = () => {
-  
+  useEffect(() => {
+    const container = document.querySelector('.project-container');
+    if (container) {
+      container.scrollTop = 1; // Trigger a small scroll
+      setTimeout(() => {
+        container.scrollTop = 0; // Reset the scroll position
+      }, 100);
+    }
+  }, []);
   return (
-    
-    
-        <Wrapper>
-        <main style={{background: "#222429", overflow: 'hidden'}}>
-      <Header/>
+    <>
+      <Header />
+      <GridWrapper>
+      <aside className="recent-work">
+          <h2>Most Recent Work:</h2>
+          {recentWorkData.map((work, index) => (
+            <div key={index} className="work-item">
+              <img src={work.imageUrl} alt={work.title} className="work-image" />
+              <h3>{work.title}</h3>
+              <p>{work.description}</p>
+              <ul className="key-features">
+                {work.keyFeatures.map((feature, featureIndex) => (
+                  <li key={featureIndex}>{feature}</li>
+                ))}
+              </ul>
+              <div className="tech-stack">
+  {work.techStack.map((tech, index) => {
+    const formattedTechName = tech.replace(/\s/g, ''); // Removes spaces
+    const icon = techIcons[formattedTechName];
 
-    
-      <body style={{marginTop: '-206px !important', top: '0px !important'}}>  
-        
-        <main>
-        
-          <section>
-           
-            <Grid style={{ height: '0px', padding : '0px'}}>
-          
-          <ul style={{width: '1200px', height: '1200px'}}>  
-          <div class='container'>
+    if (!icon) return null; // Skip rendering if the icon is not found
 
-          <li> 
-            <div class='zoom'><div className ="slideRight slides" style={{animation: "slideRight ease 1.4s forwards 1.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
-            <div class="title">3D unity game <FaUnity  size={'50px'}/></div>
-            <div className='desc'>A complex intricate project with over 1000 lines of code</div>
-            <div className='links'><SiGithub  size={'25px'}/> &ensp;<a href="https://github.com/RolandosG/space_shooter" target="_blank" rel="noopener noreferrer">Github</a>&ensp;<MdWebAsset size={'25px'}/>&ensp;<a href="http://rolandosg.com/RecentProject" target="_blank" rel="noopener noreferrer">Website</a>
+    return (
+      <div key={index} className="tech-stack-icon" title={tech}>
+        {icon}
+      </div>
+    );
+  })}
+</div>
+              <a href={work.projectLink} target="_blank" rel="noopener noreferrer">Explore Now</a>
+              <a href={work.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-            </div>
-            </div>
-          </li>
-          <li> 
-            <div class='zoom'><div className ="slideRight slides" style={{animation: "slideRight ease 2.4s forwards 2.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
-            <div class="title">BlackJack Website <FaReact  size={'50px'}/></div>
-            <div className='desc'>A group project built with React to showcase abilities of full stack development. </div>
-            <div className='links'><SiGithub  size={'25px'}/> &ensp;<a href="https://github.com/RolandosG/PRJ666-BlackJack-main" target="_blank" rel="noopener noreferrer">Github</a>&ensp;<MdWebAsset size={'25px'}/>&ensp;<a href="https://blackjack.herokuapp.com/landing" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-            </div>
-            </div>
-          </li>
-          
-          
-          {/*<li>
-            <div class='zoom'> <div className="slideRight slides" style={{animation: "slideRight ease 3.4s forwards 3.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
-            <div className='title'>Shopping store <FaReact  size={'50px'}/></div>
-            <div className='desc'>A RESTful Apps back end that displays items from mongoDB. </div>
-            <div className='links'><SiGithub  size={'25px'}/> &ensp;<a href="https://github.com/RolandosG/backend" target="_blank" rel="noopener noreferrer">Github</a>&ensp;<MdWebAsset size={'25px'}/>&ensp;<a href="https://storepage-back-end.herokuapp.com/products" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-            </div>
-            </div>
-  </li>*/}
-           
+          ))}
+        </aside>
 
-           
-          <li>
-            <div class='zoom'>
-            <div class ="slideRight slides" style={{animation: "slideRight ease 3.4s forwards 4.2s",  
-            background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)',
-            backgroundSize: '240% 240%'}}>
-            <div className='title'>Robotics in C <GiVintageRobot size={'50px'}/></div>
-            <div className='desc'>Real time robot simulation using sensors to locate & move objects </div>
-            <div className='links'><SiGithub  size={'25px'}/> &ensp;<a href="https://github.com/RolandosG/exploration-machine" target="_blank" rel="noopener noreferrer">Github</a>&ensp; <SiYoutube size={'25px'}/>
-            &ensp;<a href="https://youtu.be/a51OEI5wD8A" target="_blank" rel="noopener noreferrer">Video</a></div>
-            </div>
-            </div>       
-          </li>
-          
+        <main className="project-container">
+          <ul className="project-list">
+            {projectData.map((project, index) => (
+              <li key={index} className={`project-item slide-${index}`}>
+                <div className="project-image">
+                  <img src={project.imageUrl} alt={project.title} />
+                </div>
+                <div className="project-links">
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">Website</a>
+                  {project.youtubeLink && (
+                    <a href={project.youtubeLink} target="_blank" rel="noopener noreferrer">Video</a>
+                  )}
+                </div>
+                
+                <div className="project-content">
+                  <div className="project-title">
+                    {project.title} {project.icon}
+                  </div>
+                  <div className="project-description">{project.description}</div>
+                  <div className="additional-info">
+                   
+                    
+                  </div>
+                </div>
+              </li>
+            ))}
             
-          
-          <li>
-            <div class='zoom'>
-            <div className="slideRight slides" style={{animation: "slideRight ease 3.4s forwards 5.2s", background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
-            <div className='title'>Adventure Game <SiCplusplus  size={'40px'}/></div>
-            <div className='desc'>An RPG adventure game made from scratch using unreals blueprints.</div>
-            <div className='links'><SiGithub  size={'25px'}/> &ensp;<a href="https://github.com/RolandosG/Rolos-Grand-Adventure" target="_blank" rel="noopener noreferrer">Github</a>&ensp;<SiYoutube size={'25px'}/>&ensp;<a href="https://youtu.be/GpPjLehmRSk" target="_blank" rel="noopener noreferrer">Video</a></div>
-            </div>
-            </div>
-          </li>
-       
-          
-
-
-          
-          <li>
-            <div class='zoom'> 
-            <div className ="slideRight slides" style={{animation: "slideRight ease 3.4s forwards 6.2s",  background: 'linear-gradient(44deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0)', backgroundSize: '240% 240%'}}>
-            <div className='title'>Portfolio Website<FaReact  size={'50px'}/></div>
-            <div className='desc'>The website I've designed here.</div>
-            <div className='links'><SiGithub  size={'25px'}/>&ensp;<a href="https://github.com/RolandosG/portfolioSite" target="_blank" rel="noopener noreferrer">LEARN MORE</a>
-            </div>
-            </div> 
-            </div>
-          </li>
-         
- 
-          <li> 
-            <div className="slideRight" style={{animation: "slideRight ease 3.4s forwards 7.2s", marginTop: '-30px'}}>
-            <div className='title' style={{textDecoration: 'none'}}><br></br>More to come...</div>
-            <div className='desc'></div></div>
-          </li>
-
-            </div>
-</ul>
-
-</Grid>
-
-        </section>
-        
+          </ul>
         </main>
-      </body>
-      <footer>FOOTER</footer>
-  
-  </main>
-  </Wrapper>
-    
-    
+      </GridWrapper>
+    </>
   );
-}
-
+};
 
 export default Portfolio;
+

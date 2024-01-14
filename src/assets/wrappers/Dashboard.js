@@ -191,7 +191,7 @@ body {
     //background: rgb(2,0,36);
     //background: #F4F4F4;
     background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(244,244,244,1) 100%);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(244,244,244,1) 100%);
     padding-top: 4em;
     padding-bottom: 0em;
 }
@@ -333,6 +333,10 @@ introduction {
   background: #rgb(2,0,36);
   color: white;
 }
+.fa-Github {
+  background: #rgb(2,0,36);
+  color: white;
+}
 .bg {
   background: #rgb(2,0,36);
   position: absolute;
@@ -370,7 +374,13 @@ section {
 
   //background: rgb(168,148,61);
   //background: linear-gradient(180deg, rgba(168,148,61,1) 0%, rgba(11,38,71,1) 100%);
-  background: linear-gradient(88deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0);
+  //background: linear-gradient(88deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0); old
+  background: linear-gradient(88deg, #6a7fdb, #89c2d9, #a1cdf1, #d3e0f5); new
+  //background: linear-gradient(88deg, #f4e8c1, #e0c3fc, #cfd9df, #b8b5af); newest
+ 
+
+
+
   background-size: 240% 240%;
   animation: section-animation 24s ease infinite;
   
@@ -665,5 +675,20 @@ section:nth-child(3n) {
   display: block; /* to center the image if needed */
   margin: 0 auto; /* to center the image if needed */ 
 }
+
+.section-container {
+  display: flex; /* or 'flex' with 'flex-direction: column;' */
+  flex-direction: column;
+}
+
+/* If you have specific CSS for AboutSection and Highlights, make sure they allow for vertical stacking */
+.about-section, .highlights {
+  width: 100%;
+  height: 400px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* other styles */
+}
+
 `
 export default Wrapper
