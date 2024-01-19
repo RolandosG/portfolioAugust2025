@@ -132,6 +132,7 @@ body {
   font-size: .75rem;
   font-weight: 700;
   opacity: .7;
+  text-decoration: underline;
 }
 
 .card__body {
@@ -196,6 +197,94 @@ body {
         //box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
         transform: translatey(0px);
     }
+}
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px; // Space between items
+  font-size 17px;
+}
+
+/* Icons and text styling */
+.mobile-links svg {
+  //margin-right: 5px; // Space between icon and text
+}
+.mobile-links a {
+ 
+  display: flex;
+  align-items: center;
+  color: blue;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) { // Media query for mobile devices
+  .grid-container {
+    display: grid;
+    width: 100%; // Ensure full width
+    grid-template-columns: repeat(2, 1fr); // Two equal columns
+    gap: 20px 40px;
+    padding: 10px;
+    box-sizing: border-box; // Include padding in the width calculation
+    justify-items: center; // Center items horizontally within each grid cell
+  }
+  
+  .grid-item {
+    transition: box-shadow 3s;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    padding: 0px;
+    font-size: 12px;
+    text-align: center;
+    float: left;
+    
+  }
+
+  .card {
+    width: 150px; // Adjust card width to fit grid item
+    height: 150px;
+    // Adjust other card styles as necessary
+  }
+
+  .card__front, .card__back {
+    width: 150px; // Adjust card width to fit grid item
+    height: 150px;
+    // Adjust styles for front and back of the card
+    // Consider reducing padding, font-sizes etc.
+  }
+
+  .card__title {
+    font-size: 12px; // Adjust title font size for mobile
+    // Other styling adjustments for title
+  }
+
+  .card__subtitle {
+    font-size: 12px; // Adjust subtitle font size for mobile
+    // Other styling adjustments for subtitle
+  }
+
+  .card__body {
+    display: none; // Hide card body on mobile
+  }
+  
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; // Space between items
+    font-size 10px;
+  }
+  .mobile-links a {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    color: blue;
+    text-decoration: underline;
+  }
+  // ... any other mobile specific styles
 }
 `
 

@@ -94,13 +94,83 @@ const HighlightsCSS = styled.div`
     color: #fff;
   }
 
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+  @media (min-width: 768px) {
+    // Desktop styles
+    .project-grid {
+      display: flex;
+    }
+    .dots-container {
+      display: none; // Hide dots on desktop
+    }
+  }
   @media (max-width: 768px) {
     .project-grid {
-      display: block; // Stack cards vertically on smaller screens
+      display: none; // Use flexbox for swipeable layout
+      overflow-x: auto; // Allow horizontal scrolling
+      scroll-snap-type: x mandatory; // Enable snap effect on scroll
     }
   
     .project-card {
       width: 100%; // Full width for each card
+      height: 300px;
+      scroll-snap-align: start; // Snap align at the start of each card
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-details {
+      display: none; // Hide descriptions on small screens
+    }
+
+    .tech-icons {
+      display: flex;
+      flex-wrap: wrap; // Allow icons to wrap
+      justify-content: center; // Center the icons
+      gap: 10px; // Space between icons
+      padding-top: 180px;
+    }
+
+    .links a {
+   
+      color: #fff;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    .links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
+      grid-column: 1 / -1; // Links span both columns
+      color: #fff;
+    }
+    // Adjustments to other elements as needed
+  }
+  @media (min-width: 768px) {
+    // Desktop styles
+    .project-grid {
+      display: flex;
+    }
+    .dots-container {
+      display: none; // Hide dots on desktop
     }
   }
 `;

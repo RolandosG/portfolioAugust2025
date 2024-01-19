@@ -278,6 +278,57 @@ const Wrapper = styled.section`
     color: #45a29e;
     text-decoration: none;
 }
+@media (max-width: 768px) {
+  /* Mobile-specific styles */
+  .highlight-content {
+    width: 100%; /* Ensure the container takes full width */
+    padding: 0 10px; /* Adjust padding to ensure content does not overflow */
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  .highlight-tabs {
+    display: flex;
+    flex-direction: row; /* Change to column if you want vertical stacking */
+    flex-wrap: wrap;
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Space between buttons */
+  }
 
+  .highlight-tabs button {
+    flex: 1 1 auto; /* Allow buttons to take available space and wrap */
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .highlight-content img {
+    width: 100%; /* Full width images on mobile */
+    max-width: 400px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .highlight-content pre, .highlight-content code {
+    font-size: 0.8rem; /* Reduce font size for code blocks */
+    word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+    white-space: normal; /* Ensures normal text wrapping */
+  }
+
+  .upgrade-system-gif, .Main-Boss, .Event-gif {
+    /* Adjust these styles as needed for mobile */
+    max-width: 100%; /* Full width on mobile */
+  }
+  .overlay-content {
+    padding: 10px; /* Adds padding to prevent text touching the screen edges */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+  }
+
+  .overlay-content p {
+    font-size: .8em; /* Adjusts font size for mobile, if needed */
+    text-align: center;
+  }
+
+  .download-button a {
+    display: block; /* Ensures the link takes the full width of the button */
+    text-align: center; /* Centers the text within the link */
+  }
+}
 `
 export default Wrapper

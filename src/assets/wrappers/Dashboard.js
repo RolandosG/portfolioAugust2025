@@ -12,6 +12,7 @@ const Wrapper = styled.main`
 }
 
 #wrapper{
+  
     width: 100%;
     //height: auto;
     overflow: visible;
@@ -127,6 +128,7 @@ const Wrapper = styled.main`
 	margin: 0;
     background: #rgb(2,0,36);
   background:  #0B2647;
+  
 }
 
 .lead { font-family: 'Quicksand'; }
@@ -198,7 +200,23 @@ body {
 introduction {
     
 }
-
+@media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
+  .nav-separator {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
+  .icons-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between; /* or 'flex-start' depending on layout */
+  }
+}
+@media (min-width: 992px) { /* Adjust this breakpoint as needed */
+  .brand-name-desktop {
+    margin-right: 330px; /* This margin will only apply on larger screens */
+  }
+}
 @media screen and (max-width: 979px) {
     div.corousel-inner {        
         border: 0;
@@ -354,9 +372,14 @@ introduction {
 
 /* All the snapping stuff */
 .scroll-container {
-    height: 100vh;
+    height: 102vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+
+    @media (max-width: 768px) { // Adjust the breakpoint as necessary
+      width: 100vw; // Limit width to viewport width on mobile
+      overflow-x: hidden; // Prevent horizontal scrolling on mobile
+    }
 }
 
 section {
@@ -386,6 +409,7 @@ section {
   
 
 }
+
 @keyframes section-animation {
       0% {
         background-position: 0% 50%;
@@ -646,7 +670,7 @@ section:nth-child(3n) {
     .highlight-content {
         flex-direction: column;
     }
-
+   
     .highlight-content img, .highlight-content pre {
         flex: 1 1 100%;
         max-width: 100%;
@@ -679,6 +703,8 @@ section:nth-child(3n) {
 .section-container {
   display: flex; /* or 'flex' with 'flex-direction: column;' */
   flex-direction: column;
+  padding: 0px;
+  height: 103vh;
 }
 
 /* If you have specific CSS for AboutSection and Highlights, make sure they allow for vertical stacking */
@@ -689,6 +715,5 @@ section:nth-child(3n) {
   margin-bottom: 0px;
   /* other styles */
 }
-
 `
 export default Wrapper

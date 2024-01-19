@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HighlightsCSS from '../assets/wrappers/HighlightsCSS';
 
 import { SiReact, SiTypescript, SiCss3, SiMaterialUi, SiNodeDotJs, SiExpress, SiMongodb, SiAwsamplify, SiLeaflet, SiSass, SiJest } from 'react-icons/si';
 import { FaUnity, FaNodeJs } from "react-icons/fa";
 
 import MWImage from '../assets/images/MindWave.png';
-import U3DImage from '../assets/images/space.png';
+import U3DImage from '../assets/images/gamepic3.PNG';
 import WS from '../assets/images/websocket.svg';
+import SwipeableViews from 'react-swipeable-views';
 // Use `techIcons` in your component where appropriate
 
 const projectData = [
@@ -45,20 +46,71 @@ const projectData = [
 ];
 
 const Highlights = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
-  
+    const [index, setIndex] = useState(0);
+    
+    // Function to render dots
+  const renderDots = () => {
+    return projectData.map((_, i) => (
+      <div
+        key={i}
+        className={`dot ${i === index ? 'active' : ''}`}
+        onClick={() => setIndex(i)}
+      />
+    ));
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
     return (
       <HighlightsCSS>
-        <div><h1>HIGHLIGHTS</h1></div>
-        <div className="highlights">
-        <div className="project-grid">
-          {projectData.map((project, index) => (
-            <div
-              className={`project-card ${hoveredCardIndex === index ? 'expanded' : 'collapsed'}`}
+      <div><h1>HIGHLIGHTS</h1></div>
+      <div className="highlights">
+        {isMobile ? (
+          <>
+            <SwipeableViews enableMouseEvents index={index} onChangeIndex={(i) => setIndex(i)}>
+              {projectData.map((project, i) => (
+                <div
+                  className={`project-card ${hoveredCardIndex === i ? 'expanded' : 'collapsed'}`}
+                  style={{ backgroundImage: `url(${project.backgroundImage})`}}
+                  onMouseEnter={() => setHoveredCardIndex(i)}
+                  onMouseLeave={() => setHoveredCardIndex(null)}
+                  key={i}
+                >
+                  <div className="title">{project.title}</div>
+                  <div className="project-details">
+                    <p>{project.description}</p>
+                  </div>
+                  <div className="tech-icons">
+                    {project.techIcons}
+                  </div>
+                  <div className="links">
+                    <a href={project.siteLink} target="_blank" rel="noopener noreferrer">View Site </a>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <a href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">Learn More</a>
+                  </div>
+                </div>
+              ))}
+            </SwipeableViews>
+            <div className="dots-container">{renderDots()}</div>
+          </>
+        ) : (
+          <div className="project-grid">
+            {projectData.map((project, i) => (
+              <div
+              className={`project-card ${hoveredCardIndex === i ? 'expanded' : 'collapsed'}`}
               style={{ backgroundImage: `url(${project.backgroundImage})`}}
-              onMouseEnter={() => setHoveredCardIndex(index)}
+              onMouseEnter={() => setHoveredCardIndex(i)}
               onMouseLeave={() => setHoveredCardIndex(null)}
-              key={index}
+              key={i}
             >
               <div className="title">{project.title}</div>
               <div className="project-details">
@@ -68,13 +120,14 @@ const Highlights = () => {
                 {project.techIcons}
               </div>
               <div className="links">
-                <a href={project.siteLink} target="_blank">View Site </a>
-                <a href={project.githubLink} target="_blank">View on GitHub</a>
-                <a href={project.learnMoreLink} target="_blank">Learn More</a>
+                <a href={project.siteLink} target="_blank" rel="noopener noreferrer">View Site </a>
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                <a href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">Learn More</a>
               </div>
             </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </HighlightsCSS>
   );

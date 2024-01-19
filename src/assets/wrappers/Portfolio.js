@@ -231,6 +231,39 @@ export const GridWrapper = styled.main`
       border-radius: 5px; // Optional for rounded corners
     }
   }
+
+  @media (max-width: 768px) {
+    // Mobile-specific styles
+    display: block; // Instead of grid, use block layout for mobile
+
+    .recent-work, .project-container {
+      width: 100%; // Take full width on mobile
+      padding: 10px; // Adjust padding as needed
+      margin-bottom: 20px; // Space between sections
+    }
+
+    .project-list {
+      align-items: stretch; // Ensure project items take full width
+    }
+
+    .project-item {
+      flex-direction: column; // Stack elements vertically within each project
+      align-items: center; // Center align the content
+      padding: 15px; // Adjust padding as needed
+    }
+
+    .project-image img {
+      width: 100%; // Adjust image width as needed
+      height: auto; // Maintain aspect ratio
+      margin-left: 0; // Reset margin left
+    }
+
+    .project-links, .project-content {
+      align-self: center; // Center these on mobile
+      padding: 0 10px; // Add padding on the sides
+    }
+  }
+
   // Add media queries for responsiveness
 `;
 

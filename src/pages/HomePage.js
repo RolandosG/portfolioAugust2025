@@ -30,10 +30,10 @@ const HomePage = () => {
         </div>
         <Highlights/>
         </section>
-        <section>
+        <section class="section-container">
         <ProjectGrid/>
         </section>   
-        <section>
+        <section class="section-container">
         <Cards style={{marginLeft: "50%"}}/> 
         </section>
         
