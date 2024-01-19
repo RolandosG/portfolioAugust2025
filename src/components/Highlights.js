@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import HighlightsCSS from '../assets/wrappers/HighlightsCSS';
 
+import SwipeableViews from "react-swipeable-views-react-18-fix"
 import { SiReact, SiTypescript, SiCss3, SiMaterialUi, SiNodeDotJs, SiExpress, SiMongodb, SiAwsamplify, SiLeaflet, SiSass, SiJest } from 'react-icons/si';
 import { FaUnity, FaNodeJs } from "react-icons/fa";
 
 import MWImage from '../assets/images/MindWave.png';
 import U3DImage from '../assets/images/gamepic3.PNG';
 import WS from '../assets/images/websocket.svg';
-import SwipeableViews from 'react-swipeable-views';
 // Use `techIcons` in your component where appropriate
 
 const projectData = [
