@@ -4,8 +4,9 @@ import { setConfiguration, Row, Col, Container } from "react-grid-system";
 import { SiSwift, SiCplusplus } from 'react-icons/si'
 import { FaReact, FaUnity } from 'react-icons/fa'
 import { IoLogoHtml5 } from 'react-icons/io'
-import { SiCss3, SiJavascript, SiJava, SiBootstrap, SiCsharp} from 'react-icons/si'
+import { SiCss3, SiJavascript, SiBootstrap, SiCsharp} from 'react-icons/si'
 import { SiTypescript, SiNodedotjs, SiExpress, SiMongodb, SiGit, SiAwsamplify } from 'react-icons/si';
+import {FaJava} from 'react-icons/fa';
 import WS from '../assets/images/websocketSkill.svg';
 setConfiguration({ maxScreenClass: 'xl', gridColumns: 12 });
 
@@ -33,7 +34,7 @@ const Skills = () => {
         <Row justify="between" className="rows">
           <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><SiCplusplus size={50} className="skill-icon"/><br /><span className="skill-detail">C++</span></Col>
           <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><SiJavascript size={50} className="skill-icon"/><br /><span className="skill-detail">JavaScript</span></Col>
-          <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><SiJava size={50} /><br className="skill-icon"/><span className="skill-detail">Java</span></Col>
+          <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><FaJava size={50} /><br className="skill-icon"/><span className="skill-detail">Java</span></Col>
           <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><SiNodedotjs size={50} className="skill-icon"/><br /><span className="skill-detail">Node.js</span></Col>
           <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><SiMongodb size={50} className="skill-icon"/><br /><span className="skill-detail">MongoDB</span></Col>
           <Col xs={3} sm={3} md={2} lg={2} xl={1} className="skill"><SiGit size={50} className="skill-icon"/><br /><span className="skill-detail">Git</span></Col>
