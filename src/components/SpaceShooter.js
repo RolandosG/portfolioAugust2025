@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Header from '../components/Header';
 import Wrapper from '../assets/wrappers/SpaceShooter';
@@ -216,60 +216,60 @@ function MediaGalleryGame() {
     );
 }
 
-function GameMechanicsStrategies() {
-    return (
-        <section id="game-mechanics-strategies">
-            <h2>Game Mechanics & Strategies</h2>
+// function GameMechanicsStrategies() {
+//     return (
+//         <section id="game-mechanics-strategies">
+//             <h2>Game Mechanics & Strategies</h2>
 
-            {/* Unique Mechanics */}
-            <div className="unique-mechanics">
-                <h3>Unique Mechanics</h3>
-                <p>Description of the unique mechanics...</p>
-            </div>
+//             {/* Unique Mechanics */}
+//             <div className="unique-mechanics">
+//                 <h3>Unique Mechanics</h3>
+//                 <p>Description of the unique mechanics...</p>
+//             </div>
 
-            {/* Strategies & Tips */}
-            <div className="strategies-tips">
-                <h3>Strategies & Tips</h3>
-                <p>Provide guidance for new players...</p>
-            </div>
-        </section>
-    );
-}
+//             {/* Strategies & Tips */}
+//             <div className="strategies-tips">
+//                 <h3>Strategies & Tips</h3>
+//                 <p>Provide guidance for new players...</p>
+//             </div>
+//         </section>
+//     );
+// }
 
-function ProblemSolvingChronicles() {
-    return (
-        <section id="problem-solving-chronicles">
-            <h2>Problem-Solving Chronicles</h2>
+// function ProblemSolvingChronicles() {
+//     return (
+//         <section id="problem-solving-chronicles">
+//             <h2>Problem-Solving Chronicles</h2>
 
-            {/* Challenge-Solution Pairing */}
-            <div className="challenge-solution">
-                <h3>Challenge Faced</h3>
-                <p>Description of a challenge...</p>
-                <h3>Solution Found</h3>
-                <p>Description of the solution...</p>
-            </div>
+//             {/* Challenge-Solution Pairing */}
+//             <div className="challenge-solution">
+//                 <h3>Challenge Faced</h3>
+//                 <p>Description of a challenge...</p>
+//                 <h3>Solution Found</h3>
+//                 <p>Description of the solution...</p>
+//             </div>
 
-            {/* Iterative Process */}
-            <div className="iterative-process">
-                <h3>Iterative Process</h3>
-                <p>Show early versions and the final version...</p>
-            </div>
+//             {/* Iterative Process */}
+//             <div className="iterative-process">
+//                 <h3>Iterative Process</h3>
+//                 <p>Show early versions and the final version...</p>
+//             </div>
 
-            {/* Critical Decisions */}
-            <div className="critical-decisions">
-                <h3>Critical Decisions</h3>
-                <p>Discuss key decisions made...</p>
-            </div>
-        </section>
-    );
-}
+//             {/* Critical Decisions */}
+//             <div className="critical-decisions">
+//                 <h3>Critical Decisions</h3>
+//                 <p>Discuss key decisions made...</p>
+//             </div>
+//         </section>
+//     );
+// }
 function ArchivedFeatures()
 {
     return (
 <section id="archived-features">
     <h2>Archived Features</h2>
     <p>In the early stages of Space Shooter, the game included a login system and a database for score tracking. Due to the maintenance needs of these features, they were eventually removed from the game. However, you can still explore the code for these features on GitHub.</p>
-    <a href="https://github.com/RolandosG/space_shooter/tree/main/Archived%20features" target="_blank" rel="noreferrer">View the Archived Features code on GitHub</a>
+    <a href="https://github.com/RolandosG/space_shooter/tree/main/Archived%20features" target="_blank" rel="noopener noreferrer">View the Archived Features code on GitHub</a>
 </section>
     );
 }

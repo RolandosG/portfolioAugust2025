@@ -41,7 +41,7 @@ const ScrollingImage = ({ src }) => {
 function EngagingHeader() {
     // Content similar to your game header, but tailored for Mindwave
     // Consider using a background video or image that shows the social aspect of the site
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    //const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     const backgroundMedia = MindWaveph1;
     const renderOverlayContent = () => (
         <div className="overlay-content">

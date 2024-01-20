@@ -3,11 +3,11 @@ import Header from '../components/Header';
 import { GridWrapper } from '../assets/wrappers/Portfolio.js';
 
 import { FaReact, FaUnity } from 'react-icons/fa';
-import { SiGithub } from 'react-icons/si';
-import { MdWebAsset } from 'react-icons/md';
+// import { SiGithub } from 'react-icons/si';
+// import { MdWebAsset } from 'react-icons/md';
 import { GiVintageRobot } from 'react-icons/gi';
 import { SiCplusplus } from 'react-icons/si';
-import { SiYoutube } from 'react-icons/si';
+// import { SiYoutube } from 'react-icons/si';
 
 import unityPic from '../assets/images/gamepic3.PNG';
 import blackjackPic from '../assets/images/blackjack.png';
@@ -15,8 +15,8 @@ import robotCPic from '../assets/images/robotC.png';
 import unrealPic from '../assets/images/unreal.png';
 import websitePic from '../assets/images/websitePic.png';
 import mwPic from '../assets/images/MindWave.png';
-
-import { SiReact, SiTypescript, SiExpress, SiMongodb, SiAwsamplify, SiLeaflet, SiSass, SiJest } from 'react-icons/si';
+//SiExpress, SiJest
+import { SiReact, SiTypescript, SiMongodb, SiAwsamplify, SiLeaflet, SiSass,  } from 'react-icons/si';
 import {FaNodeJs} from 'react-icons/fa';
 import WS from '../assets/images/websocketSkill.svg';
 import { useEffect } from 'react';

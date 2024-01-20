@@ -1,7 +1,7 @@
 import React from "react";
 import Wrapper from "../assets/wrappers/skills";
 import { setConfiguration, Row, Col, Container } from "react-grid-system";
-import { SiSwift, SiCplusplus } from 'react-icons/si'
+import { SiCplusplus } from 'react-icons/si'
 import { FaReact, FaUnity } from 'react-icons/fa'
 import { IoLogoHtml5 } from 'react-icons/io'
 import { SiCss3, SiJavascript, SiBootstrap, SiCsharp} from 'react-icons/si'
