@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import HighlightsCSS from '../assets/wrappers/HighlightsCSS';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; // Import slick carousel CSS 
+import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme CSS
 
-import SwipeableViews from "react-swipeable-views-react-18-fix"
 import { SiReact, SiTypescript, SiCss3, SiMaterialUi, SiNodeDotJs, SiExpress, SiMongodb, SiAwsamplify, SiLeaflet, SiSass, SiJest } from 'react-icons/si';
 import { FaUnity, FaNodeJs } from "react-icons/fa";
 
@@ -32,7 +34,7 @@ const projectData = [
       backgroundImage: MWImage,
   },
   {
-    title: "Space shooter",
+    title: "Space Odyssey",
     description: "A 3D game of interstellar challenges and rewards.",
     siteLink: "https://rolandosg.com/RecentProject",
     githubLink: "https://github.com/RolandosG/Shape_Shooter_Game",
@@ -48,18 +50,25 @@ const projectData = [
 const Highlights = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
-    const [index, setIndex] = useState(0);
+    const [selectedProject, setSelectedProject] = useState('Social Media Website');
     
-    // Function to render dots
-  const renderDots = () => {
-    return projectData.map((_, i) => (
-      <div
-        key={i}
-        className={`dot ${i === index ? 'active' : ''}`}
-        onClick={() => setIndex(i)}
-      />
-    ));
-  };
+    const renderProject = (projectName) => {
+      const project = projectData.find(p => p.title === projectName);
+      return project ? (
+        <div className={`project-card`} style={{ backgroundImage: `url(${project.backgroundImage})`}}>
+          <div className="title">{project.title}</div>
+          <div className="project-details">
+            <p>{project.description}</p>
+          </div>
+          <div className="tech-icons">{project.techIcons}</div>
+          <div className="links">
+            <a href={project.siteLink} target="_blank" rel="noopener noreferrer">View Site</a>
+            <a href={project.githubLink} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">Learn More</a>
+          </div>
+        </div>
+      ) : null;
+    };
 
   useEffect(() => {
     const handleResize = () => {
@@ -76,32 +85,12 @@ const Highlights = () => {
       <div className="highlights">
         {isMobile ? (
           <>
-            <SwipeableViews enableMouseEvents index={index} onChangeIndex={(i) => setIndex(i)}>
-              {projectData.map((project, i) => (
-                <div
-                  className={`project-card ${hoveredCardIndex === i ? 'expanded' : 'collapsed'}`}
-                  style={{ backgroundImage: `url(${project.backgroundImage})`}}
-                  onMouseEnter={() => setHoveredCardIndex(i)}
-                  onMouseLeave={() => setHoveredCardIndex(null)}
-                  key={i}
-                >
-                  <div className="title">{project.title}</div>
-                  <div className="project-details">
-                    <p>{project.description}</p>
-                  </div>
-                  <div className="tech-icons">
-                    {project.techIcons}
-                  </div>
-                  <div className="links">
-                    <a href={project.siteLink} target="_blank" rel="noopener noreferrer">View Site </a>
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                    <a href={project.learnMoreLink} target="_blank" rel="noopener noreferrer">Learn More</a>
-                  </div>
-                </div>
-              ))}
-            </SwipeableViews>
-            <div className="dots-container">{renderDots()}</div>
-          </>
+           <div className="project-selector">
+          <button onClick={() => setSelectedProject('Social Media Website')}>MindWave</button>
+          <button onClick={() => setSelectedProject('Space Odyssey')}>Unity3D</button>
+        </div>
+        {renderProject(selectedProject)}
+        </>
         ) : (
           <div className="project-grid">
             {projectData.map((project, i) => (

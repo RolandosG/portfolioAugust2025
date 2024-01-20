@@ -121,6 +121,36 @@ const HighlightsCSS = styled.div`
       display: none; // Hide dots on desktop
     }
   }
+  .project-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; // Space above the project cards
+  }
+
+  .project-selector button {
+    background-color: #f0f0f0; // Neutral color
+    color: #333; // Dark text color for contrast
+    border: 1px solid #ccc; // Subtle border
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    width: 120px; // Ensures both buttons are the same size
+    text-align: center;
+  }
+
+
+  .project-selector button:hover {
+    background-color: #e0e0e0; // Slightly darker on hover
+  }
+
+  .project-selector button:active {
+    transform: scale(0.95); // Shrink slightly when clicked
+  }
+
   @media (max-width: 768px) {
     .project-grid {
       display: none; // Use flexbox for swipeable layout
@@ -139,7 +169,11 @@ const HighlightsCSS = styled.div`
     .project-details {
       display: none; // Hide descriptions on small screens
     }
-
+    .project-selector button {
+      padding: 8px 15px;
+      font-size: 14px;
+      width: 100px;
+    }
     .tech-icons {
       display: flex;
       flex-wrap: wrap; // Allow icons to wrap

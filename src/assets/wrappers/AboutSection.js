@@ -16,6 +16,7 @@ const AboutSectionWrapper = styled.section`
     height: 100px; // Adjust size as needed
     border-radius: 50%; // Makes the image circular
     margin-bottom: 20px; // Space between the image and the title
+    object-fit: cover;
   }
   
   .introduction .about-title {
@@ -36,12 +37,13 @@ const AboutSectionWrapper = styled.section`
   @media (max-width: 768px) { // Media query for tablets and mobile devices
     .about-section {
       width: 95%; // Slightly narrower on small screens
-      padding-top: 50px;
+      padding-top: 80px;
     }
 
     .profile-photo img {
-      width: 0px; // Slightly smaller image on mobile
-      height: 0px;
+      width: 80px; // Slightly smaller image on mobile
+      height: 80px;
+      object-fit: cover;
     }
 
     .introduction .about-title {
