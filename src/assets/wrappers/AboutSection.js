@@ -37,12 +37,36 @@ const AboutSectionWrapper = styled.section`
   @media (max-width: 768px) { // Media query for tablets and mobile devices
     .about-section {
       width: 95%; // Slightly narrower on small screens
-      padding-top: 80px;
+      padding-top: 0px;
+     
+      height: 200px;
     }
 
     .profile-photo img {
       width: 80px; // Slightly smaller image on mobile
       height: 80px;
+      object-fit: cover;
+    }
+
+    .introduction .about-title {
+      font-size: 1.5rem; // Slightly smaller font on mobile
+    }
+
+    .background {
+      font-size: 12px; // Slightly smaller font for the text
+    }
+  }
+  @media (max-width: 375px) { // Media query for tablets and mobile devices
+    .about-section {
+      width: 95%; // Slightly narrower on small screens
+      padding-top: 0px;
+     
+      height: 0px;
+    }
+
+    .profile-photo img {
+      width: 80px; // Slightly smaller image on mobile
+      height: 40px;
       object-fit: cover;
     }
 
