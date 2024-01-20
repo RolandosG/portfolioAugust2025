@@ -13,7 +13,7 @@ display: flex;
   font-size: 2.5rem;
   text-decoration: underline;
   color: #003d49;
-  padding-top: 150px;
+  padding-top: 20px;
   padding-bottom: 25px;
 }
 .avatar {
@@ -33,15 +33,16 @@ display: flex;
   /* Additional styling as needed */
 }
 .rows {
-  padding: 20px;
+  padding: 0px;
 }
 .skills-intro {
   font-size: 20px;
-  padding-top: 125px;
+  padding-top: 5px;
 }
 .skill-icon {
   transition: transform 0.3s ease;
   /* Additional styling as needed */
+  padding: 5px;
 }
 
 .skill-detail {
