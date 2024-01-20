@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   background-color: transparent;
   padding: -100px;
 }
-
+//
 .grid-item {
   transition: box-shadow 3s;
   background-color: transparent;
