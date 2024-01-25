@@ -1,7 +1,7 @@
 // AboutSection.js
 import React from 'react';
 import AboutSectionWrapper from '../assets/wrappers/AboutSection';
-import selfie from '../assets/images/selfie.jpg';
+import selfie from '../assets/images/profile_photo.jpg';
 
 const AboutSection = () => {
   return (
