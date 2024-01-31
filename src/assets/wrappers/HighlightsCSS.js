@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const HighlightsCSS = styled.div`
   .highlights {
+    margin-top: 0px;
     padding: 20px;
     overflow: hidden; // Prevent overflow issues when cards expand
   }
@@ -253,6 +254,17 @@ const HighlightsCSS = styled.div`
       color: #fff;
     }
     // Adjustments to other elements as needed
+  }
+  @media (min-width: 1039px) {
+    .highlights {
+      margin-top: 0px; // Keep the top margin for larger screens
+    }
+  }
+
+  @media (min-width: 1629px) {
+    .highlights {
+      margin-top: 50px; // Increase top margin for very large screens
+    }
   }
 `;
 
