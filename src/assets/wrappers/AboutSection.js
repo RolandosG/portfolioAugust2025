@@ -86,8 +86,8 @@ const AboutSectionWrapper = styled.section`
   }
   @media (max-width: 1800px) {
     .about-section {
-      padding-top: 0px; /* Increase top padding for larger screens */
-      padding-bottom: 200px; /* Increase bottom padding to avoid overlap */
+      padding-top: 150px; /* Increase top padding for larger screens */
+      padding-bottom: 00px; /* Increase bottom padding to avoid overlap */
     }
 `;
 
