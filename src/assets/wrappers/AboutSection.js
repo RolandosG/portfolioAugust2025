@@ -78,7 +78,13 @@ const AboutSectionWrapper = styled.section`
       font-size: 12px; // Slightly smaller font for the text
     }
   }
-  @media (min-width: 1500px) {
+ @media (min-width: 769px) and (max-width: 1499px) {
+    .about-section {
+      padding-top: 150px; /* Normal top padding for medium to large screens */
+      padding-bottom: 150px; /* Normal bottom padding */
+    }
+  }
+  @media (max-width: 1800px) {
     .about-section {
       padding-top: 0px; /* Increase top padding for larger screens */
       padding-bottom: 200px; /* Increase bottom padding to avoid overlap */
