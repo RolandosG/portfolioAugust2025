@@ -78,8 +78,9 @@ const Highlights = () => {
 
     return (
       <HighlightsCSS>
-      <div><h1>HIGHLIGHTS</h1></div>
+      
       <div className="highlights">
+      <div><h1>HIGHLIGHTS</h1></div>
         {isMobile ? (
           <>
            <div className="project-selector">
