@@ -263,7 +263,7 @@ const HighlightsCSS = styled.div`
 
   @media (min-width: 1629px) {
     .highlights {
-      margin-top: 50px; // Increase top margin for very large screens
+      margin-top: 80px; // Increase top margin for very large screens
     }
   }
 `;
