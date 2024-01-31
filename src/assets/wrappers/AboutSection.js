@@ -126,7 +126,7 @@ const AboutSectionWrapper = styled.section`
     }
     @media (min-width: 1629px) and (min-height: 843px) {
       .about-section {
-        padding-top: 00px; // Specific adjustment for 1629x842 resolution
+        padding-top: -50px; // Specific adjustment for 1629x842 resolution
         padding-bottom: 200px;
       }
     }
