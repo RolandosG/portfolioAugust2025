@@ -49,7 +49,7 @@ function EngagingHeader() {
             <p>Connect globally, share, and explore the world.</p>
            
             <button className="explore-button">
-                <a href="https://mindwave.com/" target="_blank" rel="noopener noreferrer">Explore Now!</a>
+                <a href="https://master.d72pvjeru1c09.amplifyapp.com/" target="_blank" rel="noopener noreferrer">Explore Now!</a>
             </button>
             <br></br>
             <button className="learn-more-button">
