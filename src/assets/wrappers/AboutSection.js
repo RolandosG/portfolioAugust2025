@@ -78,58 +78,27 @@ const AboutSectionWrapper = styled.section`
       font-size: 12px; // Slightly smaller font for the text
     }
   }
- @media (min-width: 769px) and (max-width: 1499px) {
+  @media (min-width: 769px) and (max-width: 1038px) {
     .about-section {
-      padding-top: 150px; /* Normal top padding for medium to large screens */
-      padding-bottom: 150px; /* Normal bottom padding */
+      padding-top: 120px; // Medium screen padding-top
+      padding-bottom: 120px;
     }
   }
-  @media (max-width: 1800px) {
+
+  @media (min-width: 1039px) {
     .about-section {
-      padding-top: 150px; /* Increase top padding for larger screens */
-      padding-bottom: 00px; /* Increase bottom padding to avoid overlap */
+      padding-top: 150px; // Larger screens padding-top
+      padding-bottom: 150px;
     }
-  
-    @media (min-height: 843px) {
-      .about-section {
-       
-        padding-top: 100px;
-        padding-bottom: 150px;
-      }
+  }
+
+  @media (min-width: 1629px) {
+    .about-section {
+      padding-top: 100px; // Specific padding for very large screens
+      padding-bottom: 180px;
     }
-  @media (max-height: 842px) {
-      .about-section {
-        // Reduce padding for screens with a height less than 842px
-        padding-top: 100px;
-        padding-bottom: 100px;
-      }
-    }
-    @media (min-width: 769px) and (max-width: 1038px) {
-      .about-section {
-        padding-top: 80px; // Reduced top padding for medium screens
-        padding-bottom: 80px; // Matching bottom padding
-      }
-    }
-  
-    @media (min-width: 1039px) and (max-height: 692px) {
-      .about-section {
-        padding-top: 100px; // Adjusted for specific size
-        padding-bottom: 100px;
-      }
-    }
-  
-    @media (min-width: 1039px) and (min-height: 693px) {
-      .about-section {
-        padding-top: 150px; // Higher padding for larger heights
-        padding-bottom: 150px;
-      }
-    }
-    @media (min-width: 1629px) and (min-height: 843px) {
-      .about-section {
-        padding-top: 0px; // Specific adjustment for 1629x842 resolution
-        padding-bottom: 250px;
-      }
-    }
+  }
+    
   
 `;
 
