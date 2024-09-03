@@ -80,7 +80,8 @@ const projectData = [
     title: 'CompareIlvlToolTip',
     icon: <FaGamepad size={'50px'} />, // Or another suitable icon
     description: 'Over 50 downloads on its first day. Optimizing gear with ease."', 
-    websiteLink: 'https://www.curseforge.com/wow/addons/compareilvltooltip', // Link to CurseForge page
+    websiteLink: 'https://www.curseforge.com/wow/addons/compareilvltooltip',
+    githubLink: 'https://github.com/RolandosG/CompareIlvlToolTip_Addon',
     imageUrl: wowAddonImage, // Path to your addon's image
   },
   {
