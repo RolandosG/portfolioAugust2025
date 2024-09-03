@@ -113,7 +113,7 @@ const ProjectGrid = () => {
   animation: 'section-animation 10s ease infinite'}}><p 
             class="card__body">My first complex project made with Unity</p>
               <div className="mobile-links">
-            <a href="https://Rolandosg.com/RecentProject" target="_blank" rel="noopener noreferrer"><SiGithub  size={'20px'}/> LEARN MORE</a>
+            <a href="https://Rolandosg.com/3D-Unity-Game" target="_blank" rel="noopener noreferrer"><SiGithub  size={'20px'}/> LEARN MORE</a>
             <a href="https://mega.nz/file/IlRQDDZC#En6A-TSbq-DhhKdxOSyhSoALsFwxM2s8QK1803D-jHk" target="_blank" rel="noopener noreferrer"><MdWebAsset size={'25px'}/> Play here</a>
             </div>
           </div>

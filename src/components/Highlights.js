@@ -33,9 +33,9 @@ const projectData = [
   {
     title: "Space Odyssey",
     description: "A 3D game of interstellar challenges and rewards.",
-    siteLink: "https://rolandosg.com/RecentProject",
+    siteLink: "https://rolandosg.com/3D-Unity-Game",
     githubLink: "https://github.com/RolandosG/Shape_Shooter_Game",
-    learnMoreLink: "https://rolandosg.com/RecentProject",
+    learnMoreLink: "https://rolandosg.com/3D-Unity-Game",
     techIcons: [
     <FaUnity size={20} />,
     

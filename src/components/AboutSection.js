@@ -12,7 +12,7 @@ const AboutSection = () => {
             <img src={selfie} alt="Rolandos" />
           </div>
           <div className="introduction" style={{ color: "#041121"}}>
-            <h1 className="about-title">About</h1>
+            <h1 className="about-title">Aabout</h1>
           </div>
           <div className="background">
           Passionate developer with a rich background in design, art, and technology.

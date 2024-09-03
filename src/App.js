@@ -12,7 +12,7 @@ function App() {
         <Route path='/' element={<HomePage/>}/>
        {/*<Route path='/About' element={<About/>}/>*/}
         <Route path='/Portfolio' element={<Portfolio/>}/>
-        <Route path='/RecentProject' element={<RecentProject/>}/>
+        <Route path='/3D-Unity-Game' element={<RecentProject/>}/>
         <Route path= '/MindWave' element={<MindWave/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>      

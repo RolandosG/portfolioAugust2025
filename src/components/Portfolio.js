@@ -15,9 +15,10 @@ import robotCPic from '../assets/images/robotC.png';
 import unrealPic from '../assets/images/unreal.png';
 import websitePic from '../assets/images/websitePic.png';
 import mwPic from '../assets/images/MindWave.png';
+import wowAddonImage from '../assets/images/wowAddonImage.png'
 //SiExpress, SiJest
 import { SiReact, SiTypescript, SiMongodb, SiAwsamplify, SiLeaflet, SiSass,  } from 'react-icons/si';
-import {FaNodeJs} from 'react-icons/fa';
+import {FaNodeJs, FaGamepad} from 'react-icons/fa';
 import WS from '../assets/images/websocketSkill.svg';
 import { useEffect } from 'react';
 
@@ -56,7 +57,7 @@ const projectData = [
     icon: <FaUnity size={'50px'} />,
     description: 'A complex intricate project with over 1000 lines of code.',
     githubLink: 'https://github.com/RolandosG/space_shooter',
-    websiteLink: 'http://rolandosg.com/RecentProject',
+    websiteLink: 'http://rolandosg.com/3D-Unity-Game',
     imageUrl: unityPic,
   },
   {
@@ -70,10 +71,17 @@ const projectData = [
   {
     title: 'BlackJack Website',
     icon: <FaReact size={'50px'} />,
-    description: 'A group project built with React to showcase abilities of full stack development.',
+    description: 'A project built with React to showcase abilities of full stack development.',
     githubLink: 'https://github.com/RolandosG/PRJ666-BlackJack-main',
     websiteLink: 'https://blackjack.herokuapp.com/landing',
     imageUrl: blackjackPic,
+  },
+  {
+    title: 'CompareIlvlToolTip',
+    icon: <FaGamepad size={'50px'} />, // Or another suitable icon
+    description: 'Over 50 downloads on its first day. Optimizing gear with ease."', 
+    websiteLink: 'https://www.curseforge.com/wow/addons/compareilvltooltip', // Link to CurseForge page
+    imageUrl: wowAddonImage, // Path to your addon's image
   },
   {
     title: 'Robotics in C',
