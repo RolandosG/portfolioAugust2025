@@ -6,7 +6,7 @@ import { FaReact, FaUnity } from 'react-icons/fa';
 // import { SiGithub } from 'react-icons/si';
 // import { MdWebAsset } from 'react-icons/md';
 import { GiVintageRobot } from 'react-icons/gi';
-import { SiCplusplus } from 'react-icons/si';
+import { SiCplusplus, SiUnrealengine } from 'react-icons/si';
 // import { SiYoutube } from 'react-icons/si';
 
 import unityPic from '../assets/images/gamepic3.PNG';
@@ -16,6 +16,7 @@ import unrealPic from '../assets/images/unreal.png';
 import websitePic from '../assets/images/websitePic.png';
 import mwPic from '../assets/images/MindWave.png';
 import wowAddonImage from '../assets/images/wowAddonImage.png'
+import HorrorPhoto from '../assets/images/fpsPhotos/SCREENSHOT04.PNG';
 //SiExpress, SiJest
 import { SiReact, SiTypescript, SiMongodb, SiAwsamplify, SiLeaflet, SiSass,  } from 'react-icons/si';
 import {FaNodeJs, FaGamepad} from 'react-icons/fa';
@@ -67,6 +68,15 @@ const projectData = [
     githubLink: 'https://github.com/RolandosG/portfolioSite',
     websiteLink: 'rolandosg.com',
     imageUrl: websitePic,
+  },
+  {
+    title: 'UE5 Horror Game',
+    icon: <SiUnrealengine size={'50px'} />,
+    description: 'A horror game made with Unreal Engine 5.',
+    githubLink: 'https://github.com/RolandosG',
+    websiteLink: 'rolandosg.com/Design-Portfolio',
+    youtubeLink: 'https://youtu.be/BKFmySQyaJk?si=i79UmqA-S0a3SDIZ',
+    imageUrl: HorrorPhoto,
   },
   {
     title: 'BlackJack Website',

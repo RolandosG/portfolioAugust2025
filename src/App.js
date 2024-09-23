@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import {HomePage, Portfolio, RecentProject, Error, MindWave} from './pages';
+import {HomePage, Portfolio, RecentProject, Error, MindWave, GameDesign} from './pages';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <Route path='/3D-Unity-Game' element={<RecentProject/>}/>
         <Route path= '/MindWave' element={<MindWave/>}/>
         <Route path='*' element={<Error/>}/>
+        <Route path='/Design-Portfolio' element={<GameDesign/>}/>
       </Routes>      
       
     </BrowserRouter>

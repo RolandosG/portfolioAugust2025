@@ -4,7 +4,8 @@ import About from "./About";
 import Portfolio from "./Portfolio";
 import RecentProject from "./RecentProject";
 import MindWave from "./MindWave"
+import GameDesign from "./GameDesign"
 
 export{
-    HomePage, About, Portfolio, RecentProject, MindWave, Error
+    HomePage, About, Portfolio, RecentProject, MindWave, Error, GameDesign
 }

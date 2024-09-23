@@ -1,0 +1,382 @@
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expanded-project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.philosophy-title {
+  font-size: 2.5em;
+  text-decoration: underline;
+  background: linear-gradient(to right, #ECF0F1, #2C3E50);
+  -webkit-background-clip: text;
+  
+  animation: fadeText 3s infinite;
+  color: #ECF0F1; /* Light Gray */
+  text-align: left;
+  margin-bottom: 20px;
+}
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.feature-media {
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-right: 0px;
+  background: #44444400;
+  border-radius: 8px;
+  color: #fff;
+  text-align: left;
+}
+.expanded-project-details {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 80%; /* Ensure it doesn't exceed the viewport width */
+  height: 90%; /* Fixed height */
+  max-height: 90%; /* Ensure it doesn't exceed the viewport height */
+  overflow-y: auto; /* Handle overflow */
+  margin: 20px;
+  position: relative;
+  animation: fadeInSlideUp 0.5s ease-out;
+  padding-top: 0; /* Remove top padding to align tabs at the top */
+}
+
+.expanded-project-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.expanded-project-details .video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 20px;
+}
+
+.expanded-project-details .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.expanded-project-details .details {
+  text-align: left;
+}
+
+.expanded-project-details .details p,
+.expanded-project-details .details ul {
+  margin: 10px 0;
+}
+
+.expanded-project-details .details ul {
+  list-style-type: disc;
+  padding-left: 0px;
+}
+
+.expanded-project-details .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.expanded-project-details .close-button:hover {
+  color: #ff5c5c;
+}
+
+.expanded-project-details .close-button:focus {
+  outline: none;
+}
+
+.expanded-project-details .close-button:before {
+  content: '\00d7'; /* Unicode for multiplication sign (×) */
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(44, 62, 80, 0); /* Dark Blue with transparency */
+  color: #ECF0F1; /* Light Gray */
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  text-align: center; /* Center the text */
+}
+
+.carousel-caption h4 {
+  margin: 0 0 5px 0;
+}
+
+.carousel-caption p {
+  margin: 0;
+}
+
+.react-tabs__tab-list {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  background: #2C3E50; /* Dark Blue */
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #18BC9C; /* Teal */
+}
+
+.react-tabs__tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #ECF0F1; /* Light Gray */
+  background: #2C3E50; /* Dark Blue */
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: background 0.3s, border-bottom 0.3s;
+}
+
+.react-tabs__tab--selected {
+  background: #18BC9C; /* Teal */
+  border-bottom: 2px solid #E74C3C; /* Red */
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+}
+
+.react-tabs__tab:hover {
+  background: #18BC9C;
+}
+
+.react-tabs__tab:first-child {
+  flex: 2; /* Make the first tab wider */
+}
+
+.react-tabs__tab:last-child {
+  flex: 1; /* Make the last tab narrower */
+}
+
+.tab-panel-content {
+  max-height: calc(80vh - 50px); /* Adjust based on the height of the tabs */
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.tab-panel-content .features-title {
+  font-size: 2.5em !important;
+  text-decoration: underline !important;
+  
+  color: #1d1919 !important; /* Light Gray */
+  background: linear-gradient(to right, #ECF0F1, #2C3E50) !important;
+  animation: fadeText 3s infinite !important;
+  
+  text-align: left !important;
+  margin-bottom: 20px !important;
+}
+
+.tab-panel-content .philosophy-title {
+  font-size: 2.5em !important;
+  text-decoration: underline !important;
+  color: #1d1919 !important; /* Light Gray */
+  background: linear-gradient(to right, #ECF0F1, #2C3E50) !important;
+  animation: fadeText 3s infinite !important;
+  text-align: left !important;
+  margin-bottom: 20px !important;
+}
+
+.video-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* New styles for feature and screenshot images */
+.carousel .slide img {
+  max-width: 100%;
+  max-height: 400px; /* Adjust the max height as needed */
+  object-fit: contain;
+}
+
+.carousel .slide iframe {
+
+  height: auto; /* Maintain aspect ratio */
+  margin: 0; /* Remove any margin */
+  border: 0;
+}
+/* New styles for feature items */
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the start */
+  width: 80%;
+}
+
+.feature-media {
+  display: flex;
+  justify-content: center; /* Center the media content */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-media iframe {
+  
+  width: 450px; /* Set the desired width */
+  height: 450px; /* Set the desired height */
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-arrow.left {
+  left: 10px; /* Adjust as needed */
+}
+
+.carousel-arrow.right {
+  right: 10px; /* Adjust as needed */
+}
+
+.feature-item img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.feature-item .feature-video-wrapper {
+  width: 100%; /* Ensure the video wrapper takes full width */
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+}
+
+.feature-item .feature-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px; /* Set specific width */
+  height: 300px; /* Set specific height */
+  border-radius: 8px;
+  margin: auto; /* Center the iframe */
+}
+
+.feature-description {
+  max-width: 50%;
+  padding-right: 0px;
+  padding-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center; /* Center align text vertically */
+  justify-content: flex-start; /* Align text to the start */
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+.philosophy-content {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.philosophy-section {
+  margin-bottom: 20px;
+}
+
+.philosophy-section h4 {
+  margin-bottom: 10px;
+  text-decoration: underline;
+  color: #333; /* Darker color for the title */
+  font-size: 1.5em; /* Larger font size for the title */
+}
+
+.philosophy-section p {
+  margin-bottom: 10px;
+  color: #666; /* Lighter color for the description */
+  font-size: 1.1em; /* Slightly larger font size for the description */
+}
+
+.philosophy-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.philosophy-section ul li {
+  margin-bottom: 5px;
+  color: #444; /* Medium color for the points */
+  font-size: 1em; /* Standard font size for the points */
+}

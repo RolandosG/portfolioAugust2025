@@ -13,7 +13,7 @@ const HomePage = () => {
     
     <Wrapper>
         
-        <main style={{background: "#222429", overflow: 'hidden'}}>
+        <main style={{background: "#222429", overflow: 'visible',}}>
       <Header/>
 
     

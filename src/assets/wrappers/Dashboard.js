@@ -20,7 +20,7 @@ const Wrapper = styled.main`
 // Name sliding down
   .slide-effect {
     position: absolute;
-    overflow: hidden;
+    //overflow: hidden;
     width: 100%;
     height: 40px;
     display: flex;
@@ -37,7 +37,7 @@ const Wrapper = styled.main`
     font-size: 18px;
     opacity:0;
     width: 500px;
-    
+    overflow:visible;
   }
   .slideUp
   {
@@ -70,7 +70,8 @@ const Wrapper = styled.main`
     margin-left: 0px;
     margin-right: 200px;
     animation: slideDown ease 1.4s forwards .6s;
-    padding-bottom: 30px;
+    //padding-bottom: 30px;
+    overflow:visible;
   }
   
   .slideUp {
@@ -122,15 +123,18 @@ const Wrapper = styled.main`
   
 .header {
     
-    //position: relative;
-    top: 50px;
+  overflow: visible;
+  position: relative;
 	height: 100%;
 	margin: 0;
-    background: #rgb(2,0,36);
-  background:  #0B2647;
-  
+  //background: #rgb(2,0,36);
+  //background:  #0B2647;
+  z-index: 4;
 }
-
+.dropdown-menu {
+  z-index: 999999; /* Or a higher value if needed */
+  overflow:visible;
+}
 .lead { font-family: 'Quicksand'; }
 
 .slider-menu {
