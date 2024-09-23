@@ -47,12 +47,11 @@ const Header = () => {
                   <Dropdown
                     title="Game Development"
                     items={[
+                      { label: "Horror FPS", href: "/Design-Portfolio",  icon: <FaGlobe />  },
                       { label: "Design Portfolio", href: "/Design-Portfolio" },
                       { label: "Modern Arcade Shooter", href: "/3D-Unity-Game", icon: <FaGlobe /> },
-                      { label: "Horror FPS", href: "/Design-Portfolio",  icon: <FaYoutube />  },
-                      { label: "Epic Adventure game", href: "/Design-Portfolio",  icon: <FaYoutube />  },
-                      { label: "Chiyome3DLand", href: "/Design-Portfolio",  icon: <FaYoutube />  },
-                      // Add more Game Design links as needed
+                      { label: "Epic Adventure game", href: "https://youtu.be/GpPjLehmRSk", icon: <FaYoutube />, target: "_blank", rel: "noopener noreferrer" },
+                      { label: "Chiyome3DLand", href: "https://youtu.be/_gcrVDS0MgM", icon: <FaYoutube />, target: "_blank", rel: "noopener noreferrer" },                      // Add more Game Design links as needed
                     ]}
                   />
 
