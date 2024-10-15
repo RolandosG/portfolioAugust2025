@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -10,7 +10,7 @@ import { AwesomeButton } from 'react-awesome-button';
 const ExpandedProjectDetails = ({ project, onClose }) => {
   const modalRef = useRef();
   const tabsRef = useRef();
-
+  const [selectedVideoTab, setSelectedVideoTab] = useState(0);
   const handleClickOutside = useCallback((event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       onClose();
@@ -55,12 +55,56 @@ const ExpandedProjectDetails = ({ project, onClose }) => {
         
         <Tabs onSelect={handleTabSelect}>
           <TabList ref={tabsRef}>
-            <Tab>Features</Tab>
+          {project.finishedvideoUrl && <Tab>Videos</Tab>} 
+          <Tab>Features</Tab>
             <Tab>Technologies</Tab>
             <Tab>Challenges</Tab>
             <Tab>Achievements</Tab>
           </TabList>
+          {project.finishedvideoUrl && (
+            <TabPanel>
+              <div className="tab-panel-content">
+                {/* Nested Tabs for Videos */}
+                <Tabs selectedIndex={selectedVideoTab} onSelect={(index) => setSelectedVideoTab(index)}>
+                  <TabList>
+                    <Tab>Whitebox Level</Tab>
+                    <Tab>Completed Level</Tab>
+                  </TabList>
 
+                  <TabPanel>
+                  <div className="video-wrapper">
+                  <iframe
+                    src={project.videoUrl}
+                    title="Whitebox Level Video"
+                    
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ height: '480px' }}
+                  ></iframe>
+                </div>
+                  </TabPanel>
+
+                  <TabPanel>
+
+                  <div className="video-wrapper">
+                  <iframe
+                    src={project.finishedvideoUrl }
+                    title="Completed Level Video"
+                    
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ height: '480px' }}
+                  ></iframe>
+                </div>
+                  </TabPanel>
+                </Tabs>   
+ {/* End of nested Tabs */}
+
+              </div>
+            </TabPanel>
+          )}
           <TabPanel>
             <div className="tab-panel-content">
               {project.videoUrl && (

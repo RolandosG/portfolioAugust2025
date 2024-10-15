@@ -158,7 +158,8 @@ const projectsData = [
         }
       ],
       },
-      videoUrl: 'https://www.youtube.com/embed/BKFmySQyaJk?si=GOkZfpdchO2uzseL', // Add this line
+      videoUrl: 'https://www.youtube.com/embed/BKFmySQyaJk?si=GOkZfpdchO2uzseL',
+      finishedvideoUrl: 'https://www.youtube.com/embed/rDoGhbSwFes?si=MBlKAy1ZCPODVOJf',
     },
     {
       id: 2,
