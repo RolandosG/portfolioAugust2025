@@ -23,7 +23,7 @@ const projectData = [
   {
     title: "Technical Artist",
     // link: "https://rolandosg.com/Technical-Art", // Using learnMoreLink as example
-    link: "http://lrolandosg.com/Technical-Art",
+    link: "http://rolandosg.com/Technical-Art",
     techIcons: [
       <FaUnity size={20} />,
       <SiUnrealengine size={20} />,
