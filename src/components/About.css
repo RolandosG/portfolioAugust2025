@@ -1,0 +1,74 @@
+
+/* Reset html/body to prevent default margins/padding */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrollbars at the root */
+}
+
+/* Wrapper (assuming it applies .portfolio-container or similar) */
+.portfolio-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent; /* Let <main>’s background show through */
+}
+
+/* Header (to ensure it doesn’t contribute to overflow) */
+.header {
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(8px);
+  margin: 0;
+  padding: 0 1rem; /* Minimal padding, adjust as needed */
+}
+
+/* Ensure navbar collapse doesn’t overflow */
+.navbar-collapse {
+  justify-content: space-between;
+}
+
+/* Icons container (from your Header component) */
+.icons-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon-link {
+  font-size: 24px;
+  color: #fff !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #3b82f6 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .navbar-brand {
+    position: static !important;
+    transform: none !important;
+    margin: 0 auto;
+  }
+
+  .icons-container {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+}
