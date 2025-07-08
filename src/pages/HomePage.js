@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 //import Introduction from '../components/Introduction';
 import Cards from '../components/Cards';
-import Wrapper from '../assets/wrappers/Dashboard';
+import Wrapper from '../assets/wrappers/HighlightsCSS.js';
 import AboutSection from '../components/AboutSection';
 import ProjectGrid from '../components/ProjectGrid.js';
 import Highlights from '../components/Highlights';
@@ -11,39 +11,30 @@ const HomePage = () => {
   
   return (
     
-    <Wrapper>
+   
         
-        <main style={{background: "#222429", overflow: 'visible',}}>
-      <Header/>
+        <main style={{
+          background: 'linear-gradient(135deg, #1e3a8a, #3b0764)',
+          width: '100vw', // Full viewport width
+          minHeight: '100vh', // Full viewport height, allows content to expand
+          
+          margin: 0, // Remove default margins
+          boxSizing: 'border-box', // Ensure padding doesn’t increase size
+          overflowX: 'hidden', // Prevent horizontal scroll
+        }}>
+        <Wrapper>
+        <Header/>
 
     
-      <body style={{marginTop: '-206px !important', top: '0px !important'}}>  
-        
-        <main class="scroll-container">
-        
-        { /*  <section>
-        <Introduction/>
-          </section> */}
-        <section class="section-container">  
-        <div class="about-section">
-        <AboutSection/>
-        </div>
+    
         <Highlights/>
-        </section>
-        <section class="section-container">
-        <ProjectGrid/>
-        </section>   
-        <section class="section-container">
-        <Cards style={{marginLeft: "50%"}}/> 
-        </section>
-        
-        </main>
-      </body>
-      <footer>Hello</footer>
+        </Wrapper>
+     
+
   
   </main>
 
-    </Wrapper>
+   
   );
 }
 

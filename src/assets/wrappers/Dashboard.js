@@ -177,7 +177,11 @@ const Wrapper = styled.main`
 }
 .aeu-signature { font-family: "Quicksand"; }
 .aeu-signature > img { height: 30px; }
-  
+.IconContainer
+{
+  position: absolute;
+  right: 0;
+}
 ////////////// BODY ///////////////////////
 
 body {
@@ -197,18 +201,30 @@ body {
     //background: rgb(2,0,36);
     //background: #F4F4F4;
     background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(244,244,244,1) 100%);
+    background: linear-gradient(88deg, #2D3748, #2D3748, #2D3748, #2D3748);
     padding-top: 4em;
     padding-bottom: 0em;
+    
 }
 introduction {
     
+}
+@keyframes highlightSlideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
   .nav-separator {
     display: none;
   }
 }
+
 @media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
   .icons-container {
     display: flex;
@@ -270,7 +286,10 @@ introduction {
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-
+.navbar {
+  background: rgba(30, 41, 59, 0.8) !important; /* Semi-transparent dark, matches .features-container */
+  backdrop-filter: blur(8px); /* Matches your portfolio’s blur effect */
+}
 /* The navigation menu links */
 .sidenav a {
   padding: 8px 8px 8px 32px;
@@ -402,7 +421,7 @@ section {
   //background: rgb(168,148,61);
   //background: linear-gradient(180deg, rgba(168,148,61,1) 0%, rgba(11,38,71,1) 100%);
   //background: linear-gradient(88deg,#009bba,#8ce6f6,#46ddfb,#e9f1f0); old
-  background: linear-gradient(88deg, #6a7fdb, #89c2d9, #a1cdf1, #d3e0f5); new
+  //background: linear-gradient(88deg, #2D3748, #2D3748, #2D3748, #2D3748); new
   //background: linear-gradient(88deg, #f4e8c1, #e0c3fc, #cfd9df, #b8b5af); newest
  
 

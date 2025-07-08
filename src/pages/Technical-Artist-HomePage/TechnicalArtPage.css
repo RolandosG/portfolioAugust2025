@@ -1,0 +1,53 @@
+.technical-art-wrapper {
+    position: relative;
+    min-height: 100vh; /* Full viewport height */
+    background: #222429; /* Fallback color */
+    background-image: url('../../assets/mp4/wave2.gif'); /* Background GIF */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: visible;
+  }
+  
+  .technical-art-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(34, 36, 41, 0) 0%, /* Transparent at top */
+      rgba(34, 36, 41, 0.5) 20%, /* Gradual tint */
+      rgba(34, 36, 41, 1) 50% /* Solid #222429 at bottom */
+    );
+    backdrop-filter: blur(0px); /* Start with no blur */
+    z-index: 0; /* Below content */
+    pointer-events: none; /* Allow interaction with content */
+  }
+  
+  .technical-art-content {
+    position: relative;
+    z-index: 1; /* Above pseudo-element */
+    padding-top: 80px; /* Space for header */
+    padding-bottom: 40px;
+    min-height: 100vh; /* Ensure content fills page */
+  }
+  
+  .section {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 2; /* Increase z-index to ensure content is in front */
+    position: relative; /* Ensure z-index applies */
+  }
+  
+  @media (max-width: 768px) {
+    .technical-art-content {
+      padding-top: 60px; /* Adjust for mobile header */
+    }
+  }
