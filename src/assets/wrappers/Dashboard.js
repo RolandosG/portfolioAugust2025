@@ -122,14 +122,17 @@ const Wrapper = styled.main`
   @import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand&display=swap');
   
 .header {
-    
   overflow: visible;
-  position: relative;
-	height: 100%;
-	margin: 0;
-  //background: #rgb(2,0,36);
-  //background:  #0B2647;
-  z-index: 4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  
+  margin: 0;
+  z-index: 10000;
+  transition: none !important;
+  pointer-events: auto;
+  background: rgba(15, 23, 42, 0.98); /* ensure header is always clickable and overlays content */
 }
 .dropdown-menu {
   z-index: 999999; /* Or a higher value if needed */
@@ -138,42 +141,42 @@ const Wrapper = styled.main`
 .lead { font-family: 'Quicksand'; }
 
 .slider-menu {
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: flex;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
     font-size: 25px;
 }
 .slider-menu > li {
-	display: inline-flex;
-	padding: 14px;
-	//margin-left: 2px;
-	font-family: 'Quicksand', sans-serif;
-	color: #black;
+  display: inline-flex;
+  padding: 14px;
+  //margin-left: 2px;
+  font-family: 'Quicksand', sans-serif;
+  color: #black;
     //color: #fff;
-	cursor: pointer;
-	transition: 0.3s linear all;
-	user-select: none;
+  cursor: pointer;
+  transition: 0.3s linear all;
+  user-select: none;
 }
 .slider-menu > li:hover {
-	color: white;
-	box-shadow: 0 50px 5px rgba(0, 0, 0, 0.15) inset;
+  color: white;
+  box-shadow: 0 50px 5px rgba(0, 0, 0, 0.15) inset;
 }
 .aeu-signature {
-	position: fixed;
-	top: 5px;
-	//left: 50%;
-	transform: translate(-50%);
-	font-size: 15px;
-	line-height: 30px;
-	background-color: #fff;
-	padding: 5px 10px;
-	border-radius: 25px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 5px;
+  //left: 50%;
+  transform: translate(-50%);
+  font-size: 15px;
+  line-height: 30px;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 .aeu-signature { font-family: "Quicksand"; }
 .aeu-signature > img { height: 30px; }
@@ -522,9 +525,9 @@ section:nth-child(3n) {
   margin-top: 70px;
   margin-bottom: 00px;
   overflow: hidden;
-	transform: translatey(0px);
-	animation: float 2s ease-in-out infinite;
-	img { width: 100%; height: auto; }
+  transform: translatey(0px);
+  animation: float 2s ease-in-out infinite;
+  img { width: 100%; height: auto; }
   
 }
 @keyframes float {

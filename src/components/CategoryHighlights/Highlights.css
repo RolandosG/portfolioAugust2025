@@ -1,23 +1,186 @@
+/* Image Modal Navigation Arrows */
+.image-modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #334155 60%, #3b82f6 100%);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(59,130,246,0.18);
+  color: #e2e8f0;
+  opacity: 0.92;
+  transition: background 0.2s, color 0.2s, transform 0.18s, opacity 0.2s;
+  font-size: 1.5rem;
+}
+.image-modal-arrow:hover, .image-modal-arrow:focus {
+  background: linear-gradient(135deg, #3b82f6 60%, #8b5cf6 100%);
+  color: #fff;
+  transform: translateY(-50%) scale(1.08);
+  opacity: 1;
+  outline: 2px solid #a78bfa;
+}
+.image-modal-arrow.left {
+  left: 16px;
+}
+.image-modal-arrow.right {
+  right: 16px;
+}
+/* Project Details Panel (in-place modal replacement) */
+.project-details-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100dvh;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  animation: highlightSlideDown 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0;
+  z-index: 10000;
+  backdrop-filter: none;
+  overscroll-behavior: contain;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+  height: 100dvh !important;
+}
+
+.project-details-panel .modal-header {
+  border-radius: 0;
+  background: rgba(15, 23, 42, 0.6); /* semi-transparent dark, matches modal */
+  margin-top: 0; /* Remove margin to avoid overlay gap */
+  padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+  border-bottom: none;
+  color: white;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 55px;
+  padding-bottom: 0.75rem !important;
+  width: 100%;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.project-details-panel .modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+}
+
+.project-details-panel .modal-body {
+  padding: 2rem 2.5rem 0 2.5rem;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #334155, #3b82f6);
+  color: #e2e8f0;
+  border: none;
+  border-radius: 16px;
+  padding: 0.4rem 2rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  outline: none;
+  align-self: flex-start;
+  height: 48px;
+  line-height: 0;
+  vertical-align: middle;
+}
+.back-button:hover, .back-button:focus {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .project-details-panel .modal-header,
+  .project-details-panel .modal-body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .back-button {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-details-panel {
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  .project-details-panel .modal-header {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+  .project-details-panel .modal-body {
+    padding: 1rem 0.5rem 0 0.5rem;
+  }
+  .back-button {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+}
 /* Enhanced Technical Art Portfolio CSS */
 /* Modern, smooth, and compact design for professional portfolio */
 
 /* Portfolio Container */
 .portfolio-container {
-    position: relative;
-    
-    width: 100%;
-   
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e2e8f0;
-    overflow-x: hidden;
-  }
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  padding-top: 85px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e2e8f0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
   
   /* Main Highlights Section */
   .highlights {
-    padding: 3rem 1.5rem;
-    max-width: 1500px;
-    margin: 0 auto;
-    animation: highlightSlideDown 1.8s ease-out forwards;
+  padding: 3rem 1.5rem;
+  max-width: 1500px;
+  margin: 0 auto 0 auto;
+  animation: highlightSlideDown 1.8s ease-out forwards;
+  min-height: 0;
+  box-sizing: border-box;
   }
   @keyframes highlightSlideDown {
     0% {
@@ -191,7 +354,7 @@
   /* Modal Overlay */
   .modal-overlay {
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -204,7 +367,10 @@
     visibility: hidden;
     transition: all 0.3s ease;
     backdrop-filter: blur(12px);
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 5rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
     animation: highlightlideDown 1s ease-out forwards;
 
     
@@ -227,11 +393,12 @@
   
   /* Modal Content */
   .modal-content {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: rgba(30, 41, 59, 0.15); /* subtle dark, mostly transparent */
+    backdrop-filter: blur(8px);
     border-radius: 20px;
-    max-width: 90vw;
+    max-width: 1500px;
     max-height: 90vh;
-    width: 2000px;
+    width: 100vw;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(100, 116, 139, 0.3);
     overflow: hidden;
@@ -256,18 +423,20 @@
     color: white;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 999999;
   }
   
   .modal-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-    background: linear-gradient(135deg, #60a5fa, #a78bfa);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    letter-spacing: -0.3px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+  align-self: flex-start;
+  line-height: 40px;
   }
   
   .close-button {
@@ -374,12 +543,13 @@
 }
   
   .role-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 0rem !important;
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0rem !important;
+  align-self: flex-start;
+  padding-top: 2px;
   }
   
   .role-badge {
@@ -450,6 +620,7 @@
   /* Section Styling */
   .section {
     margin-bottom: 2rem;
+    padding: 0px !important;
   }
   
   .section-title {
@@ -617,6 +788,7 @@
   }
   
   .feature-description {
+    max-width: 100% !important;
     font-size: 0.95rem;
     color: #94a3b8;
     line-height: 1.5;
@@ -944,7 +1116,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .visual-grid-item {
@@ -1003,15 +1178,16 @@
     backdrop-filter: blur(4px);
   }
   
-  .image-modal-content {
-    position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  }
+.image-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: rgba(30, 41, 59, 0.15); /* subtle dark, mostly transparent */
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
   
   .image-modal-close {
     position: absolute;
@@ -1035,12 +1211,15 @@
     background: rgba(0, 0, 0, 0.9);
   }
   
-  .full-size-image {
-    width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: contain;
-  }
+.full-size-image {
+  width: 80vw;
+  max-width: 900px;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
   
   .image-description {
     padding: 1rem;
@@ -1068,5 +1247,18 @@
     
     .full-size-image {
       max-height: 70vh;
+    }
+
+    .modal-overlay
+    {
+      padding-top: 7.5rem;
+    }
+    .portfolio-container
+    {
+      padding-top: 65px;
+    }
+    .portfolio-container
+    {
+      height:700px;
     }
   }

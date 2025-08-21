@@ -442,22 +442,57 @@ const TechnicalArtHighlights = () => {
           {/* Modal Content */}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             {/* Modal Header */}
-            <div className="modal-header">
-              <h2 className="modal-title">{activePanel.detailedData.heroTitle}</h2>
-              <div className="role-badges">
+            <div 
+              className="modal-header" 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start',
+                gap: '1.5rem',
+                marginTop: '0px', // raise header even further up
+                paddingBottom: '0.5rem',
+                minHeight: '56px',
+                background: 'rgba(30, 41, 59, 0.15)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <button
+                className="back-button"
+                onClick={closePanel}
+                style={{
+                  marginBottom: 0,
+                  marginRight: '1.5rem',
+                  alignSelf: 'flex-start',
+                  paddingTop: '2px',
+                  height: '40px',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                <ChevronLeft /> Back
+              </button>
+              <h2
+                className="modal-title"
+                style={{
+                  flex: 1,
+                  textAlign: 'center',
+                  margin: 0,
+                  alignSelf: 'flex-start',
+                  lineHeight: '40px',
+                  fontSize: '2rem',
+                  fontWeight: 700
+                }}
+              >
+                {activePanel.detailedData.heroTitle}
+              </h2>
+              {!isMobile && (
+                <div className="role-badges" style={{ marginLeft: 'auto', alignSelf: 'flex-start', paddingTop: '2px' }}>
                   {activePanel.detailedData.roles.map((role, index) => (
                     <span key={index} className="role-badge">
                       {role}
                     </span>
                   ))}
                 </div>
-              <button className="close-button" onClick={closePanel}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-               
+              )}
             </div>
 
             {/* Modal Body */}
@@ -466,10 +501,12 @@ const TechnicalArtHighlights = () => {
               {/* Screenshot Carousel */}
 {activePanel.detailedData.screenshots.length > 0 && (
   <div className="section" style={{ paddingTop: '0px' }}>
-    <h3 className="section-title">
-      <Target />
-      Visual Showcase
-    </h3>
+   {!isMobile && (
+      <h3 className="section-title">
+        <Target />
+        Visual Showcase
+      </h3>
+    )}
     <div className="visual-grid">
       {activePanel.detailedData.screenshots.map((screenshot, index) => (
         <div 
@@ -493,10 +530,10 @@ const TechnicalArtHighlights = () => {
   </div>
 )}
 
-{/* Full-size image modal */}
+{/* Full-size image modal (with navigation arrows, like GameDevelopmentHighlights) */}
 {selectedImage && (
   <div className="image-modal-overlay" onClick={() => setSelectedImage(null)}>
-    <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="image-modal-content" onClick={(e) => e.stopPropagation()} style={{ position: 'relative' }}>
       <button 
         className="image-modal-close" 
         onClick={() => setSelectedImage(null)}
@@ -505,6 +542,32 @@ const TechnicalArtHighlights = () => {
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
+      </button>
+      {/* Left Arrow */}
+      <button
+        className="image-modal-arrow left"
+        aria-label="Previous image"
+        onClick={e => {
+          e.stopPropagation();
+          const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src);
+          const prevIdx = (currentIdx - 1 + activePanel.detailedData.screenshots.length) % activePanel.detailedData.screenshots.length;
+          setSelectedImage(activePanel.detailedData.screenshots[prevIdx]);
+        }}
+      >
+        <ChevronLeft />
+      </button>
+      {/* Right Arrow */}
+      <button
+        className="image-modal-arrow right"
+        aria-label="Next image"
+        onClick={e => {
+          e.stopPropagation();
+          const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src);
+          const nextIdx = (currentIdx + 1) % activePanel.detailedData.screenshots.length;
+          setSelectedImage(activePanel.detailedData.screenshots[nextIdx]);
+        }}
+      >
+        <ChevronRight />
       </button>
       <img
         src={selectedImage.src}
@@ -524,48 +587,58 @@ const TechnicalArtHighlights = () => {
                   <span className="hero-title">{activePanel.title}
                   </span>
                 </div> */}
-             <div className="hero-section" style={{ height: '50vh' }}>
-    <p className="hero-description">
-        <div className="hero-text">
-            {activePanel.detailedData.heroDescription}
-        </div>
-    </p>
-    
-    {(activePanel.detailedData.externalLinks.store || activePanel.detailedData.externalLinks.demo) && (
-        <div className="action-buttons">
-            {activePanel.detailedData.externalLinks.store && (
-                <a
-                    href={activePanel.detailedData.externalLinks.store}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="action-button store-button"
-                >
-                    <ExternalLink />
-                    Visit Store
-                </a>
-            )}
-            {activePanel.detailedData.externalLinks.demo && (
-                <a
-                    href={activePanel.detailedData.externalLinks.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="action-button demo-button"
-                >
-                    <Play />
-                    Watch Demo
-                </a>
-            )}
-        </div>
-    )}
-</div>
+            <div className="hero-section" style={{ height: '180px' }}>
+              <div className="hero-text">
+                {activePanel.detailedData.heroDescription}
+              </div>
+              {(activePanel.detailedData.externalLinks.store || activePanel.detailedData.externalLinks.demo || activePanel.detailedData.externalLinks.github) && (
+                <div className="action-buttons">
+                  {activePanel.detailedData.externalLinks.store && (
+                    <a
+                      href={activePanel.detailedData.externalLinks.store}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-button store-button"
+                    >
+                      <ExternalLink />
+                      Visit Store
+                    </a>
+                  )}
+                  {activePanel.detailedData.externalLinks.demo && (
+                    <a
+                      href={activePanel.detailedData.externalLinks.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-button demo-button"
+                    >
+                      <Play />
+                      Watch Demo
+                    </a>
+                  )}
+                  {activePanel.detailedData.externalLinks.github && (
+                    <a
+                      href={activePanel.detailedData.externalLinks.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-button demo-button"
+                    >
+                      <ExternalLink />
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
              
               {/* Key Features */}
               {activePanel.detailedData.features.length > 0 && (
                 <div className="section">
-                  <h3 className="section-title">
-                    <Target />
-                    Key Features
-                  </h3>
+                  {!isMobile && (
+      <h3 className="section-title">
+        <Target />
+        Key Features
+      </h3>
+    )}
                   <div className="features-container">
                     <div className="feature-showcase">
                       <div className="feature-image">
@@ -610,10 +683,12 @@ const TechnicalArtHighlights = () => {
 
               {/* Technology Stack */}
               <div className="section">
-                <h3 className="section-title">
-                  <Code />
-                  Technology Stack
-                </h3>
+              {!isMobile && (
+    <h3 className="section-title">
+      <Code />
+      Technology Stack
+    </h3>
+  )}
                 <div className="tech-grid">
                   {activePanel.detailedData.technologies.map((tech, index) => (
                     <div key={index} className="tech-item">
@@ -625,10 +700,12 @@ const TechnicalArtHighlights = () => {
 
               {/* Achievements */}
               <div className="section">
-                <h3 className="section-title">
-                  <Trophy />
-                  Key Achievements
-                </h3>
+              {!isMobile && (
+    <h3 className="section-title">
+      <Trophy />
+      Key Achievements
+    </h3>
+  )}
                 <div className="achievements-grid">
                   {activePanel.detailedData.achievements.map((achievement, index) => (
                     <div key={index} className="achievement-item">
@@ -641,7 +718,12 @@ const TechnicalArtHighlights = () => {
               {/* Video Section */}
               {activePanel.detailedData.videoEmbed && (
                 <div className="section">
-                  <h3 className="section-title">Demo Video</h3>
+                  {!isMobile && (
+      <h3 className="section-title">
+        <Target />
+        Demo Video 
+      </h3>
+    )}
                   <div className="video-container">
                     <iframe
                       width="100%"

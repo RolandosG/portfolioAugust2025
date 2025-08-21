@@ -8,8 +8,9 @@ import './GameDevelopmentHome.css';
 const GameDevelopmentHome = () => {
   return (
     <Wrapper>
+       <Header />
       <div className="game-development-wrapper">
-        <Header />
+       
         <main className='container'>
           <GameDevelopmentHighlights />
         </main>
