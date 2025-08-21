@@ -76,7 +76,7 @@ const projectData = [
     gradient: 'linear-gradient(45deg, #667eea 0%, #764ba2 100%)',
     detailedData: {
       heroTitle: "Browser Automation Tool",
-      heroDescription: "A simple to use automation application to browse through media thoroughly. This tool is designed to automate the process of browsing and interacting with various media platforms, making it easier for users to access and manage their content efficiently.",
+      heroDescription: "A simple to use automation application to browse through media thoroughly. This tool is designed to automate the process of browsing and interacting with various media platforms.",
       roles: ['Developer', 'UI/UX Designer', 'Programmer'],
       screenshots: [
         { src: analyticspic, description: 'A Simple to use automation application to browse through media thoroughly' }
@@ -388,22 +388,82 @@ const SoftwareQAHighlights = () => {
           {/* Modal Content */}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             {/* Modal Header */}
-            <div className="modal-header">
-              <h2 className="modal-title">{activePanel.detailedData.heroTitle}</h2>
-              <div className="role-badges">
+            <div 
+              className="modal-header"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1.5rem',
+                marginTop: '0px',
+                padding: '0.5rem 2.5rem 0.5rem 2.5rem',
+                minHeight: '48px',
+                background: 'rgba(30, 41, 59, 0.18)',
+                backdropFilter: 'blur(12px)',
+                borderRadius: '18px',
+                boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10)',
+                width: 'calc(100% - 5rem)',
+                left: 0,
+                right: 0,
+                position: 'absolute',
+                zIndex: 20
+              }}
+            >
+              <button
+                className="back-button"
+                onClick={closePanel}
+                style={{
+                  marginBottom: 0,
+                  marginRight: '1.5rem',
+                  alignSelf: 'center',
+                  padding: '0 18px 0 0',
+                  height: '40px',
+                  minWidth: '80px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  background: 'rgba(30,41,59,0.22)',
+                  border: 'none',
+                  borderRadius: '8px',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 8px 0 rgba(0,0,0,0.08)',
+                  transition: 'background 0.2s, box-shadow 0.2s'
+                }}
+                onMouseOver={e => e.currentTarget.style.background = 'rgba(30,41,59,0.32)'}
+                onMouseOut={e => e.currentTarget.style.background = 'rgba(30,41,59,0.22)'}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight: '6px'}}>
+                  <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+                Back
+              </button>
+              <h2
+                className="modal-title"
+                style={{
+                  flex: 1,
+                  textAlign: 'center',
+                  margin: 0,
+                  alignSelf: 'center',
+                  lineHeight: '40px',
+                  fontSize: '2rem',
+                  fontWeight: 700,
+                  color: '#fff',
+                  letterSpacing: '0.01em',
+                  textShadow: '0 2px 8px rgba(0,0,0,0.10)'
+                }}
+              >
+                {activePanel.detailedData.heroTitle}
+              </h2>
+              {!isMobile && (
+                <div className="role-badges" style={{ marginLeft: 'auto', alignSelf: 'center', paddingTop: '2px' }}>
                   {activePanel.detailedData.roles.map((role, index) => (
                     <span key={index} className="role-badge">
                       {role}
                     </span>
                   ))}
                 </div>
-              <button className="close-button" onClick={closePanel}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-               
+              )}
             </div>
 
             {/* Modal Body */}
@@ -411,24 +471,69 @@ const SoftwareQAHighlights = () => {
 
               {/* Screenshot Carousel */}
 {activePanel.detailedData.screenshots.length > 0 && (
-  <div className="section" style={{ paddingTop: '0px' }}>
-    <h3 className="section-title">
-      <Target />
-      Visual Showcase
-    </h3>
-    <div className="visual-grid">
+  <div className="section">
+    {!isMobile && (
+      <h3 className="section-title">
+        <Target />
+        Visual Showcase
+      </h3>
+    )}
+    <div className="visual-grid" style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+      gap: '1.5rem',
+      alignItems: 'center',
+      justifyItems: 'center',
+      width: '100%'
+    }}>
       {activePanel.detailedData.screenshots.map((screenshot, index) => (
         <div 
           key={index} 
           className="visual-grid-item"
+          style={{
+            width: '100%',
+            maxWidth: '260px',
+            aspectRatio: '16/10',
+            background: 'rgba(30,41,59,0.10)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 2px 12px 0 rgba(0,0,0,0.08)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            position: 'relative'
+          }}
           onClick={() => setSelectedImage(screenshot)}
         >
           <img
             src={screenshot.src}
             alt={screenshot.description}
             className="grid-thumbnail"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'center',
+              background: 'transparent',
+              transition: 'transform 0.18s',
+              borderRadius: '10px'
+            }}
           />
-          <div className="thumbnail-overlay">
+          <div className="thumbnail-overlay" style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(30,41,59,0.08)',
+            opacity: 0,
+            transition: 'opacity 0.18s',
+            pointerEvents: 'none'
+          }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
             </svg>
@@ -470,7 +575,7 @@ const SoftwareQAHighlights = () => {
                   <span className="hero-title">{activePanel.title}
                   </span>
                 </div> */}
-             <div className="hero-section" style={{ height: '50vh' }}>
+             <div className="hero-section" style={{ height: '180px' }}>
     <p className="hero-description">
         <div className="hero-text">
             {activePanel.detailedData.heroDescription}
@@ -519,10 +624,12 @@ const SoftwareQAHighlights = () => {
               {/* Key Features */}
               {activePanel.detailedData.features.length > 0 && (
                 <div className="section">
-                  <h3 className="section-title">
-                    <Target />
-                    Key Features
-                  </h3>
+                   {!isMobile && (
+      <h3 className="section-title">
+        <Target />
+        Key Features
+      </h3>
+    )}
                   <div className="features-container">
                     <div className="feature-showcase">
                       <div className="feature-image">
@@ -567,10 +674,12 @@ const SoftwareQAHighlights = () => {
 
               {/* Technology Stack */}
               <div className="section">
-                <h3 className="section-title">
-                  <Code />
-                  Technology Stack
-                </h3>
+              {!isMobile && (
+    <h3 className="section-title">
+      <Code />
+      Technology Stack
+    </h3>
+  )}
                 <div className="tech-grid">
                   {activePanel.detailedData.technologies.map((tech, index) => (
                     <div key={index} className="tech-item">
@@ -582,10 +691,12 @@ const SoftwareQAHighlights = () => {
 
               {/* Achievements */}
               <div className="section">
-                <h3 className="section-title">
-                  <Trophy />
-                  Key Achievements
-                </h3>
+              {!isMobile && (
+    <h3 className="section-title">
+      <Trophy />
+      Key Achievements
+    </h3>
+  )}
                 <div className="achievements-grid">
                   {activePanel.detailedData.achievements.map((achievement, index) => (
                     <div key={index} className="achievement-item">
@@ -598,7 +709,12 @@ const SoftwareQAHighlights = () => {
               {/* Video Section */}
               {activePanel.detailedData.videoEmbed && (
                 <div className="section">
-                  <h3 className="section-title">Demo Video</h3>
+                  {!isMobile && (
+      <h3 className="section-title">
+        <Target />
+        Demo Video 
+      </h3>
+    )}
                   <div className="video-container">
                     <iframe
                       width="100%"

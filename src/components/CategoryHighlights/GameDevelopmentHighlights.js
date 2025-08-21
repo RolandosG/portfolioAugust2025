@@ -3,7 +3,6 @@ import './Highlights.css';
 
 import { FaUnity, FaGamepad, FaRocket, FaCode, FaBug } from 'react-icons/fa';
 import { SiUnrealengine, SiCsharp, SiBlender, SiUnity } from 'react-icons/si';
-
 // Import images (replace with your actual image imports)
 // Import statements for Unity Game
 import gameVideo from '../../assets/mp4/game.mp4';
@@ -539,279 +538,336 @@ const GameDevHighlights = () => {
   return (
     <div className="portfolio-container">
       {/* Main Content */}
-      <div className="highlights">
-        {isMobile ? (
-          <>
-            <div className="project-selector">
+     
+      {!activePanel ? (
+        <div className="highlights">
+          {isMobile ? (
+            <>
+            
+              <div className="project-selector">
+                
+                {projectData.map((project, i) => (
+                  <button key={i} onClick={() => setSelectedProject(project.title)}>
+                    {project.title}
+                  </button>
+                ))}
+              </div>
+              {renderProject(selectedProject)}
+            </>
+          ) : (
+            <div className="project-grid">
               {projectData.map((project, i) => (
-                <button key={i} onClick={() => setSelectedProject(project.title)}>
-                  {project.title}
-                </button>
+                <div
+                  className={`project-card ${hoveredCardIndex === i ? 'expanded' : 'collapsed'}`}
+                  style={{ 
+                    backgroundImage: `url(${project.backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => openPanel(project)}
+                  onKeyDown={(e) => { if (e.key === 'Enter') openPanel(project); }}
+                  tabIndex="0"
+                  role="button"
+                  onMouseEnter={() => setHoveredCardIndex(i)}
+                  onMouseLeave={() => setHoveredCardIndex(null)}
+                  key={i}
+                >
+                  <div className="title">{project.title}</div>
+                  <div className="project-details">
+                    <p>{project.description}</p>
+                  </div>
+                  <div className="tech-icons">{project.techIcons}</div>
+                </div>
               ))}
             </div>
-            {renderProject(selectedProject)}
-          </>
-        ) : (
-          <div className="project-grid">
-            {projectData.map((project, i) => (
-              <div
-                className={`project-card ${hoveredCardIndex === i ? 'expanded' : 'collapsed'}`}
-                style={{ 
-                  backgroundImage: `url(${project.backgroundImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  cursor: 'pointer'
-                }}
-                onClick={() => openPanel(project)}
-                onKeyDown={(e) => { if (e.key === 'Enter') openPanel(project); }}
-                tabIndex="0"
-                role="button"
-                onMouseEnter={() => setHoveredCardIndex(i)}
-                onMouseLeave={() => setHoveredCardIndex(null)}
-                key={i}
-              >
-                <div className="title">{project.title}</div>
-                <div className="project-details">
-                  <p>{project.description}</p>
-                </div>
-                <div className="tech-icons">{project.techIcons}</div>
+          )}
+        </div>
+      ) : (
+        <div className="project-details-panel">
+          {/* Header */}
+          <div 
+            className="modal-header" 
+            style={{ 
+              display: 'flex', 
+              alignItems: 'flex-start', // align to top
+              gap: '1.5rem', 
+              marginTop: '2.5rem', // lower the modal header to avoid overlap with the page header
+              paddingBottom: '0.5rem',
+              minHeight: '56px' // ensure enough height for alignment
+            }}
+          >
+            <button 
+              className="back-button" 
+              onClick={closePanel} 
+              style={{ 
+                marginBottom: 0, 
+                marginRight: '1.5rem', 
+                alignSelf: 'flex-start', // align button to top
+                paddingTop: '2px', // nudge up for better alignment
+                height: '40px', // match button height to title
+                display: 'flex', 
+                alignItems: 'center' 
+              }}
+            >
+              <ChevronLeft /> Back
+            </button>
+            <h2 
+              className="modal-title" 
+              style={{ 
+                flex: 1, 
+                textAlign: 'center', 
+                margin: 0, 
+                alignSelf: 'flex-start', // align title to top
+                lineHeight: '40px', // match button height
+                fontSize: '2rem',
+                fontWeight: 700
+              }}
+            >
+              {activePanel.detailedData.heroTitle}
+            </h2>
+            {!isMobile && (
+              <div className="role-badges" style={{ marginLeft: 'auto', alignSelf: 'flex-start', paddingTop: '2px' }}>
+                {activePanel.detailedData.roles.map((role, index) => (
+                  <span key={index} className="role-badge">
+                    {role}
+                  </span>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        )}
-      </div>
-
-      {/* Modal Overlay */}
-      {activePanel && (
-        <div className="modal-overlay active" onClick={closePanel}>
-          {/* Modal Content */}
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            {/* Modal Header */}
-            <div className="modal-header">
-              <h2 className="modal-title">{activePanel.detailedData.heroTitle}</h2>
-              <div className="role-badges">
-                  {activePanel.detailedData.roles.map((role, index) => (
-                    <span key={index} className="role-badge">
-                      {role}
-                    </span>
+          {/* Body */}
+          <div className="modal-body">
+            {/* Screenshot Carousel */}
+            {activePanel.detailedData.screenshots.length > 0 && (
+              <div className="section" style={{ paddingTop: '0px' }}>
+                {!isMobile && (
+                  <h3 className="section-title">
+                    <Target />
+                    Visual Showcase
+                  </h3>
+                )}
+                <div className="visual-grid">
+                  {activePanel.detailedData.screenshots.map((screenshot, index) => (
+                    <div 
+                      key={index} 
+                      className="visual-grid-item"
+                      onClick={() => setSelectedImage(screenshot)}
+                    >
+                      <img
+                        src={screenshot.src}
+                        alt={screenshot.description}
+                        className="grid-thumbnail"
+                      />
+                      <div className="thumbnail-overlay">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                        </svg>
+                      </div>
+                    </div>
                   ))}
                 </div>
-              <button className="close-button" onClick={closePanel}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-               
+              </div>
+            )}
+
+            {/* Full-size image modal (still as overlay for images) */}
+            {selectedImage && (
+              <div className="image-modal-overlay" onClick={() => setSelectedImage(null)}>
+                <div className="image-modal-content" onClick={(e) => e.stopPropagation()} style={{ position: 'relative' }}>
+                  <button 
+                    className="image-modal-close" 
+                    onClick={() => setSelectedImage(null)}
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                  {/* Left Arrow */}
+                  <button
+                    className="image-modal-arrow left"
+                    aria-label="Previous image"
+                    onClick={e => {
+                      e.stopPropagation();
+                      const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src);
+                      const prevIdx = (currentIdx - 1 + activePanel.detailedData.screenshots.length) % activePanel.detailedData.screenshots.length;
+                      setSelectedImage(activePanel.detailedData.screenshots[prevIdx]);
+                    }}
+                  >
+                    <ChevronLeft />
+                  </button>
+                  {/* Right Arrow */}
+                  <button
+                    className="image-modal-arrow right"
+                    aria-label="Next image"
+                    onClick={e => {
+                      e.stopPropagation();
+                      const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src);
+                      const nextIdx = (currentIdx + 1) % activePanel.detailedData.screenshots.length;
+                      setSelectedImage(activePanel.detailedData.screenshots[nextIdx]);
+                    }}
+                  >
+                    <ChevronRight />
+                  </button>
+                  <img
+                    src={selectedImage.src}
+                    alt={selectedImage.description}
+                    className="full-size-image"
+                  />
+                  <p className="image-description">{selectedImage.description}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Hero Section */}
+            <div className="hero-section" style={{ height: '180px' }}>
+              <div className="hero-text">
+                {activePanel.detailedData.heroDescription}
+              </div>
+              {(activePanel.detailedData.externalLinks.store || activePanel.detailedData.externalLinks.demo || activePanel.detailedData.externalLinks.github) && (
+                <div className="action-buttons">
+                  {activePanel.detailedData.externalLinks.store && (
+                    <a
+                      href={activePanel.detailedData.externalLinks.store}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-button store-button"
+                    >
+                      <ExternalLink />
+                      Visit Store
+                    </a>
+                  )}
+                  {activePanel.detailedData.externalLinks.demo && (
+                    <a
+                      href={activePanel.detailedData.externalLinks.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-button demo-button"
+                    >
+                      <Play />
+                      Watch Demo
+                    </a>
+                  )}
+                  {activePanel.detailedData.externalLinks.github && (
+                    <a
+                      href={activePanel.detailedData.externalLinks.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-button demo-button"
+                    >
+                      <ExternalLink />
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
 
-            {/* Modal Body */}
-            <div className="modal-body">
-
-              {/* Screenshot Carousel */}
-{activePanel.detailedData.screenshots.length > 0 && (
-  <div className="section" style={{ paddingTop: '0px' }}>
-    <h3 className="section-title">
-      <Target />
-      Visual Showcase
-    </h3>
-    <div className="visual-grid">
-      {activePanel.detailedData.screenshots.map((screenshot, index) => (
-        <div 
-          key={index} 
-          className="visual-grid-item"
-          onClick={() => setSelectedImage(screenshot)}
-        >
-          <img
-            src={screenshot.src}
-            alt={screenshot.description}
-            className="grid-thumbnail"
-          />
-          <div className="thumbnail-overlay">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-
-{/* Full-size image modal */}
-{selectedImage && (
-  <div className="image-modal-overlay" onClick={() => setSelectedImage(null)}>
-    <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
-      <button 
-        className="image-modal-close" 
-        onClick={() => setSelectedImage(null)}
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <img
-        src={selectedImage.src}
-        alt={selectedImage.description}
-        className="full-size-image"
-      />
-      <p className="image-description">{selectedImage.description}</p>
-    </div>
-  </div>
-)}
-
-              {/* Hero Section */}
-              {/* <div 
-                  className="hero-banner"
-                >
-                  <div className="hero-overlay"></div>
-                  <span className="hero-title">{activePanel.title}
-                  </span>
-                </div> */}
-             <div className="hero-section" style={{ height: '50vh' }}>
-    <p className="hero-description">
-        <div className="hero-text">
-            {activePanel.detailedData.heroDescription}
-        </div>
-    </p>
-    
-    {(activePanel.detailedData.externalLinks.store || activePanel.detailedData.externalLinks.demo || activePanel.detailedData.externalLinks.github) && (
-        <div className="action-buttons">
-            {activePanel.detailedData.externalLinks.store && (
-                <a
-                    href={activePanel.detailedData.externalLinks.store}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="action-button store-button"
-                >
-                    <ExternalLink />
-                    Visit Store
-                </a>
-            )}
-            {activePanel.detailedData.externalLinks.demo && (
-                <a
-                    href={activePanel.detailedData.externalLinks.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="action-button demo-button"
-                >
-                    <Play />
-                    Watch Demo
-                </a>
-            )}
-             {activePanel.detailedData.externalLinks.github && (
-                <a
-                    href={activePanel.detailedData.externalLinks.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="action-button demo-button"
-                >
-                    <ExternalLink />
-                    GitHub
-                </a>
-            )}
-        </div>
-    )}
-</div>
-             
-              {/* Key Features */}
-              {activePanel.detailedData.features.length > 0 && (
-                <div className="section">
+            {/* Key Features */}
+            {activePanel.detailedData.features.length > 0 && (
+              <div className="section">
+                {!isMobile && (
                   <h3 className="section-title">
                     <Target />
                     Key Features
                   </h3>
-                  <div className="features-container">
-                    <div className="feature-showcase">
-                      <div className="feature-image">
-                        <img
-                          src={activePanel.detailedData.features[currentFeatureIndex].image}
-                          alt={activePanel.detailedData.features[currentFeatureIndex].title}
-                        />
-                      </div>
-                      <div className="feature-content">
-                        <h4 className="feature-title">
-                          {activePanel.detailedData.features[currentFeatureIndex].title}
-                        </h4>
-                        <p className="feature-description">
-                          {activePanel.detailedData.features[currentFeatureIndex].description}
-                        </p>
-                      </div>
+                )}
+                <div className="features-container">
+                  <div className="feature-showcase">
+                    <div className="feature-image">
+                      <img
+                        src={activePanel.detailedData.features[currentFeatureIndex].image}
+                        alt={activePanel.detailedData.features[currentFeatureIndex].title}
+                      />
                     </div>
-                    
-                    {activePanel.detailedData.features.length > 1 && (
-                      <>
-                        <button className="feature-nav prev" onClick={prevFeature}>
-                          <ChevronLeft />
-                        </button>
-                        <button className="feature-nav next" onClick={nextFeature}>
-                          <ChevronRight />
-                        </button>
-                        
-                        <div className="feature-indicators">
-                          {activePanel.detailedData.features.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentFeatureIndex(index)}
-                              className={`feature-indicator ${index === currentFeatureIndex ? 'active' : ''}`}
-                            />
-                          ))}
-                        </div>
-                      </>
-                    )}
+                    <div className="feature-content">
+                      <h4 className="feature-title">
+                        {activePanel.detailedData.features[currentFeatureIndex].title}
+                      </h4>
+                      <p className="feature-description">
+                        {activePanel.detailedData.features[currentFeatureIndex].description}
+                      </p>
+                    </div>
                   </div>
+                  {activePanel.detailedData.features.length > 1 && (
+                    <>
+                      <button className="feature-nav prev" onClick={prevFeature}>
+                        <ChevronLeft />
+                      </button>
+                      <button className="feature-nav next" onClick={nextFeature}>
+                        <ChevronRight />
+                      </button>
+                      <div className="feature-indicators">
+                        {activePanel.detailedData.features.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentFeatureIndex(index)}
+                            className={`feature-indicator ${index === currentFeatureIndex ? 'active' : ''}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
-              )}
+              </div>
+            )}
 
-              {/* Technology Stack */}
-              <div className="section">
+            {/* Technology Stack */}
+            <div className="section">
+              {!isMobile && (
                 <h3 className="section-title">
                   <Code />
                   Technology Stack
                 </h3>
-                <div className="tech-grid">
-                  {activePanel.detailedData.technologies.map((tech, index) => (
-                    <div key={index} className="tech-item">
-                      {tech}
-                    </div>
-                  ))}
-                </div>
+              )}
+              <div className="tech-grid">
+                {activePanel.detailedData.technologies.map((tech, index) => (
+                  <div key={index} className="tech-item">
+                    {tech}
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {/* Achievements */}
-              <div className="section">
+            {/* Achievements */}
+            <div className="section">
+              {!isMobile && (
                 <h3 className="section-title">
                   <Trophy />
                   Key Achievements
                 </h3>
-                <div className="achievements-grid">
-                  {activePanel.detailedData.achievements.map((achievement, index) => (
-                    <div key={index} className="achievement-item">
-                      <p>{achievement}</p>
-                    </div>
-                  ))}
+              )}
+              <div className="achievements-grid">
+                {activePanel.detailedData.achievements.map((achievement, index) => (
+                  <div key={index} className="achievement-item">
+                    <p>{achievement}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Video Section */}
+            {activePanel.detailedData.videoEmbed && (
+              <div className="section">
+                {!isMobile && (
+                  <h3 className="section-title">
+                    <Target />
+                    Demo Video 
+                  </h3>
+                )}
+                <div className="video-container">
+                  <iframe
+                    width="100%"
+                    height="400"
+                    src={activePanel.detailedData.videoEmbed}
+                    title="Demo Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               </div>
-
-              {/* Video Section */}
-              {activePanel.detailedData.videoEmbed && (
-                <div className="section">
-                  <h3 className="section-title">Demo Video</h3>
-                  <div className="video-container">
-                    <iframe
-                      width="100%"
-                      height="400"
-                      src={activePanel.detailedData.videoEmbed}
-                      title="Demo Video"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
+            )}
           </div>
         </div>
       )}

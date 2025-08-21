@@ -5,18 +5,159 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden; /* Prevent scrollbars at the root */
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 /* Wrapper (assuming it applies .portfolio-container or similar) */
 .portfolio-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background: transparent; /* Let <main>’s background show through */
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: transparent;
+  box-sizing: border-box;
+}
+/* Responsive About Section */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  max-width: 100%;
+}
+
+.name {
+  font-size: 3rem;
+  color: #ff0000;
+  text-shadow: 2px 2px #ff0000;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-bottom: 2rem;
+}
+
+.description {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.description p {
+  margin-top: 1rem;
+}
+
+.description p:first-child {
+  margin-top: 0;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  .name {
+    font-size: 2.5rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .contact-info {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 1rem 0.5rem;
+  }
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  .name {
+    font-size: 2rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .contact-info {
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-section {
+    padding: 0.5rem;
+  }
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  .name {
+    font-size: 1.8rem;
+  }
+  .description {
+    font-size: 0.85rem;
+  }
+  .contact-info {
+    font-size: 0.8rem;
+  }
 }
 
 /* Header (to ensure it doesn’t contribute to overflow) */
