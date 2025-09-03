@@ -4,6 +4,8 @@
   align-items: flex-start;
   text-align: center;
   width: 100%;
+  margin-top: 0 !important;
+
 }
 .tech-icons.bottom-center {
   display: flex;
@@ -20,6 +22,7 @@
   color: #f4f4f4 !important;
   text-align: left;
   position: static !important;
+
 }
 /* .container{
   margin: 0 !important;
