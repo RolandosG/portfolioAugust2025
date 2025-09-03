@@ -1,10 +1,5 @@
-import React from 'react';
 import Header from '../components/Header';
-//import Introduction from '../components/Introduction';
-import Cards from '../components/Cards';
 import Wrapper from '../assets/wrappers/HighlightsCSS.js';
-import AboutSection from '../components/AboutSection';
-import ProjectGrid from '../components/ProjectGrid.js';
 import Highlights from '../components/Highlights';
 
 const HomePage = () => {
