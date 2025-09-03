@@ -12,7 +12,7 @@ import { SiCsharp, SiCplusplus, SiJavascript } from 'react-icons/si';
 
 const projectData = [
   {
-    title: "Game Developer",
+    title: "Game Development",
     link: "http://rolandosg.com/Game-Development", // Using learnMoreLink as example
     techIcons: [
       <FaUnity size={20} />,
@@ -21,7 +21,7 @@ const projectData = [
     backgroundImage: GameGif,
   },
   {
-    title: "Technical Artist",
+    title: "Technical Art",
     // link: "https://rolandosg.com/Technical-Art", // Using learnMoreLink as example
     link: "http://rolandosg.com/Technical-Art",
     techIcons: [
@@ -31,7 +31,7 @@ const projectData = [
     backgroundImage: TechArtImage,
   },
   {
-    title: "Web Developer",
+    title: "Web Development",
     link: "http://rolandosg.com/web-development", // Placeholder, as no link provided
     techIcons: [
       <SiReact size={20} />,
@@ -39,7 +39,7 @@ const projectData = [
     backgroundImage: MWImage,
   },
   {
-    title: "Software Engineer",
+    title: "Software Development",
     link: "http://rolandosg.com/Software-engineer", // Placeholder, as no link provided
     techIcons: [
     ],
@@ -93,7 +93,24 @@ const Highlights = () => {
                 </button>
               ))}
             </div>
-            {renderProject(selectedProject)}
+            <div className="project-grid">
+              {projectData.filter(p => p.title === selectedProject).map((project, i) => (
+                <div
+                  className="project-card expanded"
+                  style={{ backgroundImage: `url(${project.backgroundImage})`, cursor: 'pointer' }}
+                  onClick={() => window.location.href = project.link}
+                  onKeyDown={(e) => { if (e.key === 'Enter') window.location.href = project.link; }}
+                  tabIndex="0"
+                  role="link"
+                  key={i}
+                >
+                  <div className="project-info">
+                    <div className="title top-center">{project.title}</div>
+                    <div className="tech-icons bottom-center">{project.techIcons}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </>
         ) : (
           <div className="project-grid">
@@ -109,11 +126,10 @@ const Highlights = () => {
                 onMouseLeave={() => setHoveredCardIndex(null)}
                 key={i}
               >
-                <div className="title">{project.title}</div>
-                <div className="project-details">
-                  <p>{project.description}</p>
-                </div>
-                <div className="tech-icons">{project.techIcons}</div>
+                
+                  <div className="title top-center">{project.title}</div>
+                  <div className="tech-icons bottom-center">{project.techIcons}</div>
+                
               </div>
             ))}
           </div>

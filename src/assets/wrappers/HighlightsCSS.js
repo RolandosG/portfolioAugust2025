@@ -79,14 +79,68 @@ const HighlightsCSS = styled.div`
     justify-content: center;
     gap: 10px;
     padding-top: 10px;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 10px !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+  .tech-icons.bottom-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 10px !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
   }
 
-  .title {
+  .project-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .project-info .title {
+  font-size: 25px !important;
+  text-decoration: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     text-align: center;
     font-size: 20px;
     color: #fff;
     margin: 0;
     padding-bottom: 10px;
+    width: 100%;
+  }
+  .project-card .title {
+    text-decoration: none !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    color: #fff !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+  .project-info .title.top-center {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%;
   }
 
   .project-details h3 {
@@ -185,7 +239,7 @@ const HighlightsCSS = styled.div`
       flex-direction: column;
       transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smooth transition for mobile too */
     }
-
+   
     .project-card:hover {
       transform: scale(1.05); /* Slightly enlarge on hover for mobile */
       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
@@ -202,13 +256,20 @@ const HighlightsCSS = styled.div`
       width: 100px;
     }
 
-    .tech-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding-top: 180px;
-    }
+  .project-info .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .project-info .tech-icons.bottom-center {
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+  }
 
     .links a {
       color: #fff;

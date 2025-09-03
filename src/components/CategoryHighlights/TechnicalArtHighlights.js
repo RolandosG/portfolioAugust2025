@@ -394,349 +394,199 @@ const TechnicalArtHighlights = () => {
   return (
     <div className="portfolio-container">
       {/* Main Content */}
-      <div className="highlights">
-        {isMobile ? (
-          <>
-            <div className="project-selector">
-              {projectData.map((project, i) => (
-                <button key={i} onClick={() => setSelectedProject(project.title)}>
-                  {project.title}
-                </button>
-              ))}
-            </div>
-            {renderProject(selectedProject)}
-          </>
-        ) : (
-          <div className="project-grid">
-            {projectData.map((project, i) => (
-              <div
-                className={`project-card ${hoveredCardIndex === i ? 'expanded' : 'collapsed'}`}
-                style={{ 
-                  backgroundImage: `url(${project.backgroundImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  cursor: 'pointer'
-                }}
-                onClick={() => openPanel(project)}
-                onKeyDown={(e) => { if (e.key === 'Enter') openPanel(project); }}
-                tabIndex="0"
-                role="button"
-                onMouseEnter={() => setHoveredCardIndex(i)}
-                onMouseLeave={() => setHoveredCardIndex(null)}
-                key={i}
-              >
-                <div className="title">{project.title}</div>
-                <div className="project-details">
-                  <p>{project.description}</p>
-                </div>
-                <div className="tech-icons">{project.techIcons}</div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Modal Overlay */}
-      {activePanel && (
-        <div className="modal-overlay active" onClick={closePanel}>
-          {/* Modal Content */}
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            {/* Modal Header */}
-            <div 
-              className="modal-header" 
-              style={{ 
-                display: 'flex', 
-                alignItems: 'flex-start',
-                gap: '1.5rem',
-                marginTop: '0px', // raise header even further up
-                paddingBottom: '0.5rem',
-                minHeight: '56px',
-                background: 'rgba(30, 41, 59, 0.15)',
-                backdropFilter: 'blur(8px)'
-              }}
+      {!activePanel ? (
+        <div className="highlights">
+          <div className="project-grid vertical-layout">
+            {/* Card 0: wide1 (top left) */}
+            <div
+              className="project-card wide1"
+              onClick={() => openPanel(projectData[0])}
+              onKeyDown={e => { if (e.key === 'Enter') openPanel(projectData[0]); }}
+              tabIndex="0"
+              role="button"
+              key={0}
             >
-              <button
-                className="back-button"
-                onClick={closePanel}
-                style={{
-                  marginBottom: 0,
-                  marginRight: '1.5rem',
-                  alignSelf: 'flex-start',
-                  paddingTop: '2px',
-                  height: '40px',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <ChevronLeft /> Back
-              </button>
-              <h2
-                className="modal-title"
-                style={{
-                  flex: 1,
-                  textAlign: 'center',
-                  margin: 0,
-                  alignSelf: 'flex-start',
-                  lineHeight: '40px',
-                  fontSize: '2rem',
-                  fontWeight: 700
-                }}
-              >
-                {activePanel.detailedData.heroTitle}
-              </h2>
-              {!isMobile && (
-                <div className="role-badges" style={{ marginLeft: 'auto', alignSelf: 'flex-start', paddingTop: '2px' }}>
-                  {activePanel.detailedData.roles.map((role, index) => (
-                    <span key={index} className="role-badge">
-                      {role}
-                    </span>
-                  ))}
+              <div className="project-image-preview">
+                <img src={projectData[0].backgroundImage} alt={projectData[0].title} />
+              </div>
+              <div className="project-info">
+                <div className="title">{projectData[0].title}</div>
+                <div className="project-features">
+                  <strong>Key Feature:</strong> {projectData[0].detailedData.features[0]?.title}: {projectData[0].detailedData.features[0]?.description}
                 </div>
-              )}
+                <div className="tech-icons">{projectData[0].techIcons}</div>
+              </div>
             </div>
-
-            {/* Modal Body */}
-            <div className="modal-body">
-
-              {/* Screenshot Carousel */}
-{activePanel.detailedData.screenshots.length > 0 && (
-  <div className="section" style={{ paddingTop: '0px' }}>
-   {!isMobile && (
-      <h3 className="section-title">
-        <Target />
-        Visual Showcase
-      </h3>
-    )}
-    <div className="visual-grid">
-      {activePanel.detailedData.screenshots.map((screenshot, index) => (
-        <div 
-          key={index} 
-          className="visual-grid-item"
-          onClick={() => setSelectedImage(screenshot)}
-        >
-          <img
-            src={screenshot.src}
-            alt={screenshot.description}
-            className="grid-thumbnail"
-          />
-          <div className="thumbnail-overlay">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
+            {/* Card 1: short1 (top right) */}
+            <div
+              className="project-card short1"
+              onClick={() => openPanel(projectData[1])}
+              onKeyDown={e => { if (e.key === 'Enter') openPanel(projectData[1]); }}
+              tabIndex="0"
+              role="button"
+              key={1}
+            >
+              <div className="project-image-preview">
+                <img src={projectData[1].backgroundImage} alt={projectData[1].title} />
+              </div>
+              <div className="project-info">
+                <div className="title">{projectData[1].title}</div>
+                <div className="project-features">
+                  <strong>Key Feature:</strong> {projectData[1].detailedData.features[0]?.title}: {projectData[1].detailedData.features[0]?.description}
+                </div>
+                <div className="tech-icons">{projectData[1].techIcons}</div>
+              </div>
+            </div>
+            {/* Card 2: short2 (bottom left) */}
+            <div
+              className="project-card short2"
+              onClick={() => openPanel(projectData[2])}
+              onKeyDown={e => { if (e.key === 'Enter') openPanel(projectData[2]); }}
+              tabIndex="0"
+              role="button"
+              key={2}
+            >
+              <div className="project-image-preview">
+                <img src={projectData[2].backgroundImage} alt={projectData[2].title} />
+              </div>
+              <div className="project-info">
+                <div className="title">{projectData[2].title}</div>
+                <div className="project-features">
+                  <strong>Key Feature:</strong> {projectData[2].detailedData.features[0]?.title}: {projectData[2].detailedData.features[0]?.description}
+                </div>
+                <div className="tech-icons">{projectData[2].techIcons}</div>
+              </div>
+            </div>
+            {/* Card 3: wide2 (bottom right) */}
+            <div
+              className="project-card wide2"
+              onClick={() => openPanel(projectData[3])}
+              onKeyDown={e => { if (e.key === 'Enter') openPanel(projectData[3]); }}
+              tabIndex="0"
+              role="button"
+              key={3}
+            >
+              <div className="project-image-preview">
+                <img src={projectData[3].backgroundImage} alt={projectData[3].title} />
+              </div>
+              <div className="project-info">
+                <div className="title">{projectData[3].title}</div>
+                <div className="project-features">
+                  <strong>Key Feature:</strong> {projectData[3].detailedData.features[0]?.title}: {projectData[3].detailedData.features[0]?.description}
+                </div>
+                <div className="tech-icons">{projectData[3].techIcons}</div>
+              </div>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-)}
-
-{/* Full-size image modal (with navigation arrows, like GameDevelopmentHighlights) */}
-{selectedImage && (
-  <div className="image-modal-overlay" onClick={() => setSelectedImage(null)}>
-    <div className="image-modal-content" onClick={(e) => e.stopPropagation()} style={{ position: 'relative' }}>
-      <button 
-        className="image-modal-close" 
-        onClick={() => setSelectedImage(null)}
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      {/* Left Arrow */}
-      <button
-        className="image-modal-arrow left"
-        aria-label="Previous image"
-        onClick={e => {
-          e.stopPropagation();
-          const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src);
-          const prevIdx = (currentIdx - 1 + activePanel.detailedData.screenshots.length) % activePanel.detailedData.screenshots.length;
-          setSelectedImage(activePanel.detailedData.screenshots[prevIdx]);
-        }}
-      >
-        <ChevronLeft />
-      </button>
-      {/* Right Arrow */}
-      <button
-        className="image-modal-arrow right"
-        aria-label="Next image"
-        onClick={e => {
-          e.stopPropagation();
-          const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src);
-          const nextIdx = (currentIdx + 1) % activePanel.detailedData.screenshots.length;
-          setSelectedImage(activePanel.detailedData.screenshots[nextIdx]);
-        }}
-      >
-        <ChevronRight />
-      </button>
-      <img
-        src={selectedImage.src}
-        alt={selectedImage.description}
-        className="full-size-image"
-      />
-      <p className="image-description">{selectedImage.description}</p>
-    </div>
-  </div>
-)}
-
-              {/* Hero Section */}
-              {/* <div 
-                  className="hero-banner"
-                >
-                  <div className="hero-overlay"></div>
-                  <span className="hero-title">{activePanel.title}
-                  </span>
-                </div> */}
-            <div className="hero-section" style={{ height: '180px' }}>
-              <div className="hero-text">
-                {activePanel.detailedData.heroDescription}
+      ) : (
+        <div className="project-details-panel">
+          <div className="modal-header" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', marginTop: '2.5rem', paddingBottom: '0.3rem', minHeight: '40px' }}>
+            <button className="back-button" onClick={closePanel} style={{ marginBottom: 0, marginRight: '1.2rem', alignSelf: 'flex-start', paddingTop: '2px', height: '32px', display: 'flex', alignItems: 'center' }}>
+              <ChevronLeft /> Back
+            </button>
+            <h2 className="modal-title" style={{ flex: 1, textAlign: 'center', margin: 0, alignSelf: 'flex-start', lineHeight: '32px', fontSize: '1.2rem', fontWeight: 700 }}>
+              {activePanel.detailedData.heroTitle}
+            </h2>
+            {!isMobile && (
+              <div className="role-badges" style={{ marginLeft: 'auto', alignSelf: 'flex-start', paddingTop: '2px' }}>
+                {activePanel.detailedData.roles.map((role, index) => (
+                  <span key={index} className="role-badge">{role}</span>
+                ))}
               </div>
-              {(activePanel.detailedData.externalLinks.store || activePanel.detailedData.externalLinks.demo || activePanel.detailedData.externalLinks.github) && (
-                <div className="action-buttons">
-                  {activePanel.detailedData.externalLinks.store && (
-                    <a
-                      href={activePanel.detailedData.externalLinks.store}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="action-button store-button"
-                    >
-                      <ExternalLink />
-                      Visit Store
-                    </a>
-                  )}
-                  {activePanel.detailedData.externalLinks.demo && (
-                    <a
-                      href={activePanel.detailedData.externalLinks.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="action-button demo-button"
-                    >
-                      <Play />
-                      Watch Demo
-                    </a>
-                  )}
-                  {activePanel.detailedData.externalLinks.github && (
-                    <a
-                      href={activePanel.detailedData.externalLinks.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="action-button demo-button"
-                    >
-                      <ExternalLink />
-                      GitHub
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
-             
-              {/* Key Features */}
-              {activePanel.detailedData.features.length > 0 && (
-                <div className="section">
-                  {!isMobile && (
-      <h3 className="section-title">
-        <Target />
-        Key Features
-      </h3>
-    )}
-                  <div className="features-container">
-                    <div className="feature-showcase">
-                      <div className="feature-image">
-                        <img
-                          src={activePanel.detailedData.features[currentFeatureIndex].image}
-                          alt={activePanel.detailedData.features[currentFeatureIndex].title}
-                        />
-                      </div>
-                      <div className="feature-content">
-                        <h4 className="feature-title">
-                          {activePanel.detailedData.features[currentFeatureIndex].title}
-                        </h4>
-                        <p className="feature-description">
-                          {activePanel.detailedData.features[currentFeatureIndex].description}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    {activePanel.detailedData.features.length > 1 && (
-                      <>
-                        <button className="feature-nav prev" onClick={prevFeature}>
-                          <ChevronLeft />
-                        </button>
-                        <button className="feature-nav next" onClick={nextFeature}>
-                          <ChevronRight />
-                        </button>
-                        
-                        <div className="feature-indicators">
-                          {activePanel.detailedData.features.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentFeatureIndex(index)}
-                              className={`feature-indicator ${index === currentFeatureIndex ? 'active' : ''}`}
-                            />
-                          ))}
+            )}
+          </div>
+          <div className="modal-body">
+            <div className="modal-grid">
+              {/* Visual Showcase Row */}
+              <div className="modal-row visual-showcase-row">
+                {activePanel.detailedData.screenshots.length > 0 && (
+                  <div className="section" style={{ paddingTop: '0px' }}>
+                    {!isMobile && (<h3 className="section-title"><Target />Visual Showcase</h3>)}
+                    <div className="visual-grid">
+                      {activePanel.detailedData.screenshots.map((screenshot, index) => (
+                        <div key={index} className="visual-grid-item" onClick={() => setSelectedImage(screenshot)}>
+                          <img src={screenshot.src} alt={screenshot.description} className="grid-thumbnail" />
+                          <div className="thumbnail-overlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                          </div>
                         </div>
-                      </>
-                    )}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-
-              {/* Technology Stack */}
-              <div className="section">
-              {!isMobile && (
-    <h3 className="section-title">
-      <Code />
-      Technology Stack
-    </h3>
-  )}
-                <div className="tech-grid">
-                  {activePanel.detailedData.technologies.map((tech, index) => (
-                    <div key={index} className="tech-item">
-                      {tech}
+                )}
+                {/* Full-size image modal overlay */}
+                {selectedImage && (
+                  <div className="image-modal-overlay" onClick={() => setSelectedImage(null)}>
+                    <div className="image-modal-content" onClick={e => e.stopPropagation()} style={{ position: 'relative' }}>
+                      <button className="image-modal-close" onClick={() => setSelectedImage(null)}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </button>
+                      <button className="image-modal-arrow left" aria-label="Previous image" onClick={e => {e.stopPropagation(); const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src); const prevIdx = (currentIdx - 1 + activePanel.detailedData.screenshots.length) % activePanel.detailedData.screenshots.length; setSelectedImage(activePanel.detailedData.screenshots[prevIdx]);}}><ChevronLeft /></button>
+                      <button className="image-modal-arrow right" aria-label="Next image" onClick={e => {e.stopPropagation(); const currentIdx = activePanel.detailedData.screenshots.findIndex(img => img.src === selectedImage.src); const nextIdx = (currentIdx + 1) % activePanel.detailedData.screenshots.length; setSelectedImage(activePanel.detailedData.screenshots[nextIdx]);}}><ChevronRight /></button>
+                      <img src={selectedImage.src} alt={selectedImage.description} className="full-size-image" />
+                      <p className="image-description">{selectedImage.description}</p>
                     </div>
-                  ))}
+                  </div>
+                )}
+              </div>
+              {/* Hero Section Row */}
+              <div className="modal-row hero-section-row">
+                <div className="hero-section" style={{ height: '120px' }}>
+                  <div className="hero-text">{activePanel.detailedData.heroDescription}</div>
+                  {(activePanel.detailedData.externalLinks.store || activePanel.detailedData.externalLinks.demo || activePanel.detailedData.externalLinks.github) && (
+                    <div className="action-buttons">
+                      {activePanel.detailedData.externalLinks.store && (<a href={activePanel.detailedData.externalLinks.store} target="_blank" rel="noopener noreferrer" className="action-button store-button"><ExternalLink />Visit Store</a>)}
+                      {activePanel.detailedData.externalLinks.demo && (<a href={activePanel.detailedData.externalLinks.demo} target="_blank" rel="noopener noreferrer" className="action-button demo-button"><Play />Watch Demo</a>)}
+                      {activePanel.detailedData.externalLinks.github && (<a href={activePanel.detailedData.externalLinks.github} target="_blank" rel="noopener noreferrer" className="action-button demo-button"><ExternalLink />GitHub</a>)}
+                    </div>
+                  )}
                 </div>
               </div>
-
-              {/* Achievements */}
-              <div className="section">
-              {!isMobile && (
-    <h3 className="section-title">
-      <Trophy />
-      Key Achievements
-    </h3>
-  )}
-                <div className="achievements-grid">
-                  {activePanel.detailedData.achievements.map((achievement, index) => (
-                    <div key={index} className="achievement-item">
-                      <p>{achievement}</p>
+              {/* Key Features Row */}
+              <div className="modal-row key-features-row">
+                {activePanel.detailedData.features.length > 0 && (
+                  <div className="section">
+                    {!isMobile && (<h3 className="section-title"><Target />Key Features</h3>)}
+                    <div className="features-grid">
+                      {activePanel.detailedData.features.map((feature, index) => (
+                        <div key={index} className="feature-card">
+                          <div className="feature-image">
+                            <img src={feature.image} alt={feature.title} />
+                          </div>
+                          <div className="feature-content">
+                            <h4 className="feature-title">{feature.title}</h4>
+                            <p className="feature-description">{feature.description}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
               </div>
-
-              {/* Video Section */}
-              {activePanel.detailedData.videoEmbed && (
+              {/* Technology Stack Row */}
+              <div className="modal-row tech-stack-row">
                 <div className="section">
-                  {!isMobile && (
-      <h3 className="section-title">
-        <Target />
-        Demo Video 
-      </h3>
-    )}
-                  <div className="video-container">
-                    <iframe
-                      width="100%"
-                      height="400"
-                      src={activePanel.detailedData.videoEmbed}
-                      title="Demo Video"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
+                  {!isMobile && (<h3 className="section-title"><Code />Technology Stack</h3>)}
+                  <div className="tech-grid">{activePanel.detailedData.technologies.map((tech, index) => (<div key={index} className="tech-item">{tech}</div>))}</div>
                 </div>
-              )}
+              </div>
+              {/* Achievements Row */}
+              <div className="modal-row achievements-row">
+                <div className="section">
+                  {!isMobile && (<h3 className="section-title"><Trophy />Key Achievements</h3>)}
+                  <div className="achievements-grid">{activePanel.detailedData.achievements.map((achievement, index) => (<div key={index} className="achievement-item"><p>{achievement}</p></div>))}</div>
+                </div>
+              </div>
+              {/* Demo Video Row */}
+              <div className="modal-row demo-video-row">
+                {activePanel.detailedData.videoEmbed && (
+                  <div className="section">
+                    {!isMobile && (<h3 className="section-title"><Target />Demo Video</h3>)}
+                    <div className="video-container"><iframe width="100%" height="180" src={activePanel.detailedData.videoEmbed} title="Demo Video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

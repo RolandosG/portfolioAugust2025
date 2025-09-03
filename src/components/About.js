@@ -26,9 +26,7 @@ const About = () => {
 
             {/* Description */}
             <div className="description">
-              <p>
-    I am a versatile software developer and technical artist who creates immersive games and applications by blending technical leadership with creative problem-solving. My work is focused on building high-performance, elegant solutions from concept to delivery.
-</p>
+            
 <p>
     I have deep expertise in <b>Unity</b>, <b>Unreal Engine 5</b>, <b>C#</b>, and <b>C++</b>, along with a strong foundation in <b>JavaScript/TypeScript</b> and <b>React</b> for full-stack development. My projects include the <a href="https://www.fab.com/listings/168e3d8e-4103-4b62-beb3-b1529459f419" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa', textDecoration: 'underline', fontWeight: 600 }}>Retro FX Toolkit</a> and <a href="https://www.fab.com/listings/7f8675a5-e21e-4208-a77c-5fd94330adfd" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa', textDecoration: 'underline', fontWeight: 600 }}>NarrativeFX Toolkit</a> for UE5 (both published on Fab), and a full-stack social media platform built with <b>AWS</b> and <b>MongoDB</b>.
 </p>
