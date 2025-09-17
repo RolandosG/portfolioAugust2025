@@ -26,23 +26,29 @@ const About = () => {
 
             {/* Description */}
             <div className="description">
-            
-<p>
-    I have deep expertise in <b>Unity</b>, <b>Unreal Engine 5</b>, <b>C#</b>, and <b>C++</b>, along with a strong foundation in <b>JavaScript/TypeScript</b> and <b>React</b> for full-stack development. My projects include the <a href="https://www.fab.com/listings/168e3d8e-4103-4b62-beb3-b1529459f419" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa', textDecoration: 'underline', fontWeight: 600 }}>Retro FX Toolkit</a> and <a href="https://www.fab.com/listings/7f8675a5-e21e-4208-a77c-5fd94330adfd" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa', textDecoration: 'underline', fontWeight: 600 }}>NarrativeFX Toolkit</a> for UE5 (both published on Fab), and a full-stack social media platform built with <b>AWS</b> and <b>MongoDB</b>.
-</p>
-<p>
-    My experience as a freelance <b>QA tester</b> for Digivante, uTest, and PlaytestCloud has given me a critical eye for detail, allowing me to not only build but also to proactively optimize performance and solve critical defects. With an <b>Advanced Diploma in Computer Programming & Analysis</b> from Seneca College and certifications in <b>Microsoft Azure (AZ-900)</b> and <b>Google Data Analytics</b>, I am ready to contribute my technical expertise and creative vision to innovative development teams.
-</p>
+              <p>
+                I am a Designer with a unique blend of creative vision and technical expertise, specializing in systems design and player-driven experiences. 
+                I am passionate about solving core development challenges to create tools that empower both developers and players.
+              </p>
+              <p>
+                My portfolio includes the RetroFX Toolkit and NarrativeFX Toolkit, 
+                both of which were published on Fab, demonstrating my ability to build robust, 
+                polished systems. My work as a freelance QA tester for 
+                companies like Digivante and uTest has given me a critical eye for detail, allowing me to proactively identify design flaws and optimize player-facing experiences.
+              </p>
+              <p>
+                With a strong foundation in Unity, Unreal Engine 5, C#, and C++, 
+                as well as an Advanced Diploma in Computer Programming & Analysis, 
+                I'm ready to contribute my skills to innovative teams. 
+                My background allows me to not only conceptualize engaging systems 
+                but also to prototype and implement them from the ground up, bridging the gap between design and code.
+              </p>
             </div>
 
             {/* Contact Info */}
             <div className="contact-info">
-              <span>
-                📧 <a href="mailto:georgoulis.rolandos@gmail.com" style={{ color: '#cccccc', textDecoration: 'underline', cursor: 'pointer' }}>georgoulis.rolandos@gmail.com</a>
-              </span>
-              <span>
-                🌐 <a href="https://rolandosg.com" target="_blank" rel="noopener noreferrer" style={{ color: '#cccccc', textDecoration: 'underline', cursor: 'pointer' }}>Rolandosg.com</a>
-              </span>
+              <span>📧 georgoulis.rolandos@gmail.com</span>
+              <span>🌐 Rolandosg.com</span>
               <span>📍 Toronto, Ontario</span>
             </div>
           </div>

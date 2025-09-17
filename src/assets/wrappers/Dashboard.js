@@ -65,20 +65,20 @@ const Wrapper = styled.main`
     animation: slideUp ease .4s forwards;
   }
   
-  .slideDown {
-    top: -40px;
-    margin-left: 0px;
-    margin-right: 200px;
-    animation: slideDown ease 1.4s forwards .6s;
-    //padding-bottom: 30px;
-    overflow:visible;
-  }
+  // .slideDown {
+  //   top: -40px;
+  //   margin-left: 0px;
+  //   margin-right: 200px;
+  //   animation: slideDown ease 1.4s forwards .6s;
+  //   //padding-bottom: 30px;
+  //   overflow:visible;
+  // }
   
-  .slideUp {
-    top: -150px;
-    //left:10px;
-    animation: slideUp ease 1.4s forwards 1.2s;
-  }
+  // .slideUp {
+  //   top: -150px;
+  //   //left:10px;
+  //   animation: slideUp ease 1.4s forwards 1.2s;
+  // }
   .slideRight {
     top:-140px;
     //left:10px;

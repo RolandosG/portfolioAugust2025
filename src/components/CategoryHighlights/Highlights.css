@@ -78,7 +78,7 @@
   left: 0;
   width: 100vw;
   min-height: 100vh;
-  height: 100dvh;
+  /* height: 100dvh; */
   background: none;
   border: none;
   box-shadow: none;
@@ -87,7 +87,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  animation: highlightSlideDown 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* animation: highlightSlideDown 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
   padding: 0;
   z-index: 10000;
   backdrop-filter: none;
@@ -96,7 +96,7 @@
 
 body.modal-open {
   overflow: hidden !important;
-  height: 100dvh !important;
+  /* height: 100dvh !important; */
 }
 
 .project-details-panel .modal-header {
@@ -206,7 +206,7 @@ body.modal-open {
   width: 100%;
   max-width: 1200px;
   min-height: 100dvh;
-  height: 100dvh;
+  /* height: 100dvh; */
   margin: 0 auto;
   padding-top: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -217,10 +217,10 @@ body.modal-open {
   
   /* Main Highlights Section */
   .highlights {
-  padding: 3rem 1.5rem;
+  padding: 0rem 1.0rem;
   max-width: 1200px;
   margin: 0 auto;
-  animation: highlightSlideDown 1.8s ease-out forwards;
+  /* animation: highlightSlideDown 1.8s ease-out forwards; */
   min-height: 0;
   box-sizing: border-box;
   }
@@ -678,7 +678,7 @@ margin-left: 15px;
     padding-top: 5rem;
     padding-left: 0rem;
     padding-right: 0rem;
-    animation: highlightlideDown 1s ease-out forwards;
+    /* animation: highlightlideDown 1s ease-out forwards; */
 
     
   }
@@ -725,7 +725,7 @@ margin-left: 15px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-  animation: modalSlideDown 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* animation: modalSlideDown 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
 }
   
   .modal-overlay.active .modal-content {
@@ -789,7 +789,7 @@ margin-left: 15px;
     flex: 1;
     scrollbar-width: thin;
     scrollbar-color: #3b82f6 #1e293b;
-    animation: modalSlideDown 2.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* animation: modalSlideDown 2.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
 }
   
   .modal-body::-webkit-scrollbar {
@@ -875,20 +875,21 @@ margin-left: 15px;
   }
   
   .role-badge {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    /* background: rgba(59,130,246,0.08); */
+    color: #60a5fa;
+    padding: 0.25rem 0.7rem;
+    /* border-radius: 8px; */
+    font-size: 0.85rem;
     font-weight: 500;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: none;
+    /* border: 1px solid rgba(59,130,246,0.18); */
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, color 0.2s;
   }
-  
-  .role-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
-  }
+  /* No hover effect for role-badge */
   
   .action-buttons {
     display: flex;
@@ -1457,13 +1458,13 @@ margin-left: 15px;
     }
   }
   
-  .fade-in {
+  /* .fade-in {
     animation: fadeIn 0.4s ease-out;
   }
   
   .slide-in {
     animation: slideIn 0.4s ease-out;
-  }
+  } */
   
   /* Focus States for Accessibility */
   .project-card:focus,

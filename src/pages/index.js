@@ -6,11 +6,11 @@ import GameDevelopmentHome from "./Game-Development-HomePage/GameDevelopmentHome
 import SoftwareQAHome from "./Software-QA-HomePage/SoftwareQAHome";
 import TechnicalArtistHome from "./Technical-Artist-HomePage/TechnicalArtistHome";
 import WebDevelopmentPage from "./Web-Development-HomePage/WebDevelopmentHome";
-
+import gamedesign from "./GameDesign/GameDesignHome";
 
 
 export{
     HomePage, About, Error, 
     GameDevelopmentHome,
-    WebDevelopmentPage, TechnicalArtistHome, SoftwareQAHome
+    WebDevelopmentPage, TechnicalArtistHome, SoftwareQAHome, gamedesign
 }

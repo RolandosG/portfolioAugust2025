@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HighlightsCSS from '../assets/wrappers/HighlightsCSS';
-import { SiReact, SiTypescript, SiExpress, SiMongodb, SiAwsamplify, SiLeaflet, SiSass, SiJest } from 'react-icons/si';
-import { FaUnity, FaNodeJs } from "react-icons/fa";
+import { SiReact } from 'react-icons/si';
+import { FaUnity } from "react-icons/fa";
 import { SiUnrealengine } from 'react-icons/si';
 import MWImage from '../assets/images/MindWave.png';
 import TechArtImage from '../assets/mp4/wave2.gif';

@@ -1,0 +1,41 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #1a1a1a;
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-link {
+  transition: opacity 0.3s ease;
+}
+
+.icon-link:hover {
+  opacity: 0.8;
+}

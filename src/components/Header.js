@@ -6,6 +6,7 @@ import NavbarToggle from "react-bootstrap/NavbarToggle";
 import NavbarCollapse from "react-bootstrap/NavbarCollapse";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "../assets/wrappers/Dashboard";
+import "./Header.css";
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -36,6 +37,7 @@ const Header = () => {
               <NavbarToggle aria-controls="basic-navbar-nav" />
               <NavbarCollapse id="basic-navbar-nav">
                 <Nav className="me-auto">
+                  <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                   <Nav.Link href="/About">About</Nav.Link>
                 </Nav>
                 <Nav className="ms-auto align-items-center">
