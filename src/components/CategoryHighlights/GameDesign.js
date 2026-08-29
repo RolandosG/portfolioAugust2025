@@ -49,7 +49,7 @@ const GameDesignPortfolio = () => {
       {!selectedProject ? (
         <div className="portfolio-grid-view">
           <header className="portfolio-main-header">
-            <h1>Game Designer</h1>
+            <h1>Software Developer</h1>
             <p>Exploring the intersection of narrative, technology, and player experience</p>
           </header>
           <ProjectGrid 
